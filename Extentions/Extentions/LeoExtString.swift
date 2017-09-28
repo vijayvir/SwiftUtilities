@@ -8,6 +8,7 @@
 
 import Foundation
 
+//https://medium.com/ios-os-x-development/handling-empty-optional-strings-in-swift-ba77ef627d74
 
 extension Optional where Wrapped == String {
 
@@ -23,7 +24,7 @@ extension Optional where Wrapped == String {
 
 	}
 
-	func isEmptyString(defaultValue : String? = "") -> String? {
+	func safe(defaultValue : String? = "") -> String? {
 
 		guard let strongSelf = self else {
 
@@ -31,7 +32,7 @@ extension Optional where Wrapped == String {
 
 		}
 
-		return strongSelf.isEmpty ? nil : strongSelf
+		return strongSelf.isEmpty ? defaultValue : strongSelf
 		
 	}
 
