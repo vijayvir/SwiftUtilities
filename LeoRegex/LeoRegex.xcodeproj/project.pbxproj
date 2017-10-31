@@ -25,6 +25,7 @@
 		110BC07F1FA748CC00CFF829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110BC0851FA749DC00CFF829 /* LeoRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoRegex.swift; sourceTree = "<group>"; };
 		110BC0871FA749FC00CFF829 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		11C7C25F1FA838A300AB2AAB /* iRegex.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = iRegex.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		110BC0721FA748CB00CFF829 /* LeoRegex */ = {
 			isa = PBXGroup;
 			children = (
+				11C7C25F1FA838A300AB2AAB /* iRegex.playground */,
 				110BC0731FA748CB00CFF829 /* AppDelegate.swift */,
 				110BC0751FA748CB00CFF829 /* ViewController.swift */,
 				110BC0851FA749DC00CFF829 /* LeoRegex.swift */,
