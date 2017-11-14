@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115C9FD21FB960D700E36195 /* LeoSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FC71FB960D300E36195 /* LeoSequence.swift */; };
+		115C9FD31FB960D700E36195 /* LeoReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FC81FB960D400E36195 /* LeoReachability.swift */; };
+		115C9FD41FB960D700E36195 /* LeoAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FC91FB960D400E36195 /* LeoAlertViewController.swift */; };
+		115C9FD51FB960D700E36195 /* LeoDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FCA1FB960D400E36195 /* LeoDevice.swift */; };
+		115C9FD61FB960D700E36195 /* LeoHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FCB1FB960D500E36195 /* LeoHud.swift */; };
+		115C9FD71FB960D700E36195 /* LeoSwiftExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FCC1FB960D500E36195 /* LeoSwiftExtentions.swift */; };
+		115C9FD81FB960D700E36195 /* LeoTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FCD1FB960D500E36195 /* LeoTime.swift */; };
+		115C9FD91FB960D700E36195 /* LeoSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FCE1FB960D600E36195 /* LeoSafe.swift */; };
+		115C9FDA1FB960D700E36195 /* WebServicesAlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FCF1FB960D600E36195 /* WebServicesAlamoFire.swift */; };
+		115C9FDB1FB960D700E36195 /* LeoReadBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FD01FB960D700E36195 /* LeoReadBundle.swift */; };
+		115C9FDC1FB960D700E36195 /* LeoDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C9FD11FB960D700E36195 /* LeoDates.swift */; };
 		11EAA9A21F625E5900D6FBDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EAA9A11F625E5900D6FBDC /* AppDelegate.swift */; };
 		11EAA9A41F625E5900D6FBDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EAA9A31F625E5900D6FBDC /* ViewController.swift */; };
 		11EAA9A71F625E5900D6FBDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EAA9A51F625E5900D6FBDC /* Main.storyboard */; };
@@ -16,6 +27,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		115C9FC71FB960D300E36195 /* LeoSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoSequence.swift; sourceTree = "<group>"; };
+		115C9FC81FB960D400E36195 /* LeoReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoReachability.swift; sourceTree = "<group>"; };
+		115C9FC91FB960D400E36195 /* LeoAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoAlertViewController.swift; sourceTree = "<group>"; };
+		115C9FCA1FB960D400E36195 /* LeoDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoDevice.swift; sourceTree = "<group>"; };
+		115C9FCB1FB960D500E36195 /* LeoHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoHud.swift; sourceTree = "<group>"; };
+		115C9FCC1FB960D500E36195 /* LeoSwiftExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoSwiftExtentions.swift; sourceTree = "<group>"; };
+		115C9FCD1FB960D500E36195 /* LeoTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoTime.swift; sourceTree = "<group>"; };
+		115C9FCE1FB960D600E36195 /* LeoSafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoSafe.swift; sourceTree = "<group>"; };
+		115C9FCF1FB960D600E36195 /* WebServicesAlamoFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesAlamoFire.swift; sourceTree = "<group>"; };
+		115C9FD01FB960D700E36195 /* LeoReadBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoReadBundle.swift; sourceTree = "<group>"; };
+		115C9FD11FB960D700E36195 /* LeoDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoDates.swift; sourceTree = "<group>"; };
 		11EAA99E1F625E5900D6FBDC /* Extentions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extentions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EAA9A11F625E5900D6FBDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11EAA9A31F625E5900D6FBDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +81,17 @@
 				11EAA9A11F625E5900D6FBDC /* AppDelegate.swift */,
 				11EAA9A31F625E5900D6FBDC /* ViewController.swift */,
 				11EAA9B31F625F2600D6FBDC /* LeoExtString.swift */,
+				115C9FC91FB960D400E36195 /* LeoAlertViewController.swift */,
+				115C9FD11FB960D700E36195 /* LeoDates.swift */,
+				115C9FCA1FB960D400E36195 /* LeoDevice.swift */,
+				115C9FCB1FB960D500E36195 /* LeoHud.swift */,
+				115C9FC81FB960D400E36195 /* LeoReachability.swift */,
+				115C9FD01FB960D700E36195 /* LeoReadBundle.swift */,
+				115C9FCE1FB960D600E36195 /* LeoSafe.swift */,
+				115C9FC71FB960D300E36195 /* LeoSequence.swift */,
+				115C9FCC1FB960D500E36195 /* LeoSwiftExtentions.swift */,
+				115C9FCD1FB960D500E36195 /* LeoTime.swift */,
+				115C9FCF1FB960D600E36195 /* WebServicesAlamoFire.swift */,
 				11EAA9A51F625E5900D6FBDC /* Main.storyboard */,
 				11EAA9A81F625E5900D6FBDC /* Assets.xcassets */,
 				11EAA9AA1F625E5900D6FBDC /* LaunchScreen.storyboard */,
@@ -139,9 +172,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115C9FD61FB960D700E36195 /* LeoHud.swift in Sources */,
 				11EAA9A41F625E5900D6FBDC /* ViewController.swift in Sources */,
+				115C9FDB1FB960D700E36195 /* LeoReadBundle.swift in Sources */,
+				115C9FD21FB960D700E36195 /* LeoSequence.swift in Sources */,
+				115C9FDC1FB960D700E36195 /* LeoDates.swift in Sources */,
+				115C9FDA1FB960D700E36195 /* WebServicesAlamoFire.swift in Sources */,
+				115C9FD41FB960D700E36195 /* LeoAlertViewController.swift in Sources */,
+				115C9FD51FB960D700E36195 /* LeoDevice.swift in Sources */,
+				115C9FD31FB960D700E36195 /* LeoReachability.swift in Sources */,
 				11EAA9A21F625E5900D6FBDC /* AppDelegate.swift in Sources */,
 				11EAA9B41F625F2600D6FBDC /* LeoExtString.swift in Sources */,
+				115C9FD71FB960D700E36195 /* LeoSwiftExtentions.swift in Sources */,
+				115C9FD91FB960D700E36195 /* LeoSafe.swift in Sources */,
+				115C9FD81FB960D700E36195 /* LeoTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
