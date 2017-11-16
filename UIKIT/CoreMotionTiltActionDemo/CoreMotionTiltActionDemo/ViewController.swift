@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewToTilt: UIView!
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
+
         viewToShift.leoUIMotionEffect(strength: 40)
         
         viewToTilt.leoUITiltMotionEffect(strength: 1)
