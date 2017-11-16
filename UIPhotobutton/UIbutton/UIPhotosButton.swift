@@ -2,9 +2,8 @@
 //  Copyright © 2017 vijay vir. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
+import Foundation
 
 // last updations on Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)
 
@@ -82,6 +81,7 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
 	// MARK: CLC
 
 	required init?(coder aDecoder: NSCoder) {
+
 		super.init(coder: aDecoder)
 
 		print(UIPhotosButton.photoPath(), NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String, rootFolder)
@@ -96,16 +96,15 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
 	// MARK: Functions
 
 	class func removeCache() {
+
 		let fileManger = FileManager.default
-
 		// Delete 'subfolder' folder
-
 		do {
 			try fileManger.removeItem(atPath: rootFolder)
 		} catch let error as NSError {
 			print("Ooops! Something went wrong: \(error)")
 		}
-
+		
 	}
 
 	private class func photoPath() -> String {
@@ -230,34 +229,25 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
 
 																				if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
 																					self.camera()
-
 																				} else {
 																					self.gallery()
-
 																				}
 																			} else if index == 1 {
 																				self.gallery()
 																			} else if index == 2 {
 																				self.closureDidFinishPicking?(self.imagePaths)
-
 																			}
 					})
 				}
-
 		})
-
 	}
+
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 		picker.dismiss(animated: true, completion: { [unowned self] () in
-
 				self.closureDidFinishPicking?(self.imagePaths)
-
 		})
-
 	}
-
 }
-
 class PhotoAlertHelper: UIAlertController {
 	// make sure you have navigation  view controller
 
@@ -358,6 +348,7 @@ class PhotoAlertHelper: UIAlertController {
 }
 
 extension UIApplication {
+
 	class func phototopViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
 		if let navigationController = controller as? UINavigationController {
 			return phototopViewController(controller: navigationController.visibleViewController)
@@ -383,4 +374,6 @@ extension UIApplication {
 
 		return controller
 	}
+
+
 }
