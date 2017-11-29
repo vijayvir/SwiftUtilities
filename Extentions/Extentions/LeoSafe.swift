@@ -36,10 +36,10 @@ extension Optional where Wrapped == Int {
 
 extension Optional where Wrapped == Bool {
 
-	func leoSafe(defaultValue : Bool? = false ) -> Bool? {
+	func leoSafe(defaultValue : Bool? = false ) -> Bool {
 
 		guard let strongSelf = self else {
-			return defaultValue
+			return defaultValue ?? false
 		}
 
 		return strongSelf
