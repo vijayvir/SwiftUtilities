@@ -83,8 +83,9 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 	// Use this class to have single image.
 	
 	public  var closureDidSelectCountry: ((_ image: World.Country ) -> Void)?
-	
-	
+    
+    public  var closureDidSearch: ((_ lists: [ World.Country ] ) -> Void)?
+    
     required init?(coder aDecoder: NSCoder) {
 
         super.init(coder: aDecoder)
@@ -105,7 +106,7 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 					
             let country: World.Country = world.countryList[index]
 
-            self.text = "\(country.code)"
+            self.text = "\(country.name)"
         }
 
     }
@@ -115,6 +116,9 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 
         toolbar.sizeToFit()
 
+        let searchButton = UIBarButtonItem(title: "Search", style: .done, target: self, action: #selector(searchButtonTapped(sender:)))
+
+        
         let donebutton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(menuButtonTapped(sender:)))
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -123,6 +127,8 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 
      //   arraybutton.append(donebutton)
 
+        arraybutton.append(searchButton)
+        
         arraybutton.append(space)
 
         arraybutton.append(donebutton)
@@ -142,6 +148,12 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 
     }
 
+
+    func searchButtonTapped(sender _: UIBarButtonItem) {
+    
+        closureDidSearch?(world.countryList)
+    }
+    
     func menuButtonTapped(sender _: UIBarButtonItem) {
 
         if let index = pickerView.selectedRow(inComponent: 0) as Int? {
@@ -183,7 +195,7 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let country: World.Country = world.countryList[row]
 
-        return " \(flag(country.sortName)) \(country.code)  \(country.name)"
+        return " \(flag(country.sortName)) \(country.name)"
 
     }
 
@@ -191,7 +203,7 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 			
         let country: World.Country = world.countryList[row]
 
-        self.text = "\(country.code)"
+        self.text = "\(country.name)"
 
 			  closureDidSelectCountry?(country)
 			

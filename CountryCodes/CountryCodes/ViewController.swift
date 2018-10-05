@@ -17,10 +17,24 @@ class ViewController: UIViewController {
 	
 		txtCountryCode.closureDidSelectCountry = { country in
 			
-			print(country)
-			
 		}
 		
+        txtCountryCode.closureDidSearch = { countries in
+        
+
+            let searchCountryViewController = LeoSearchCountryViewController(countries: countries)
+            let navigationViewController = UINavigationController(rootViewController: searchCountryViewController)
+            searchCountryViewController.closureDidSelectCountry = { country in
+                
+                self.txtCountryCode.text = country.name
+            }
+     
+            self.present(navigationViewController, animated: true, completion: nil)
+            
+            
+        }
+        
+        
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 

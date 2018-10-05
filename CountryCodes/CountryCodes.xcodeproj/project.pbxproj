@@ -13,6 +13,7 @@
 		11201A401F3D966500B548DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11201A3F1F3D966500B548DD /* Assets.xcassets */; };
 		11201A431F3D966500B548DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11201A411F3D966500B548DD /* LaunchScreen.storyboard */; };
 		11201A4B1F3D967C00B548DD /* LeoCountryCodeUtlilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11201A4A1F3D967C00B548DD /* LeoCountryCodeUtlilities.swift */; };
+		6BEBD3912167626F001A40C2 /* LeoSearchCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEBD3902167626F001A40C2 /* LeoSearchCountryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		11201A4A1F3D967C00B548DD /* LeoCountryCodeUtlilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoCountryCodeUtlilities.swift; sourceTree = "<group>"; };
 		11AE37001F3DA1C70070E599 /* counrtyCodeSnapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = counrtyCodeSnapshot.png; sourceTree = "<group>"; };
 		11AE37011F3DA1DE0070E599 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6BEBD3902167626F001A40C2 /* LeoSearchCountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoSearchCountryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				11AE37011F3DA1DE0070E599 /* README.md */,
 				11201A3A1F3D966500B548DD /* ViewController.swift */,
 				11201A4A1F3D967C00B548DD /* LeoCountryCodeUtlilities.swift */,
+				6BEBD3902167626F001A40C2 /* LeoSearchCountryViewController.swift */,
 				11AE37001F3DA1C70070E599 /* counrtyCodeSnapshot.png */,
 				11201A3C1F3D966500B548DD /* Main.storyboard */,
 				11201A3F1F3D966500B548DD /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEBD3912167626F001A40C2 /* LeoSearchCountryViewController.swift in Sources */,
 				11201A4B1F3D967C00B548DD /* LeoCountryCodeUtlilities.swift in Sources */,
 				11201A3B1F3D966500B548DD /* ViewController.swift in Sources */,
 				11201A391F3D966500B548DD /* AppDelegate.swift in Sources */,
