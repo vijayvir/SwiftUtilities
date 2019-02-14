@@ -1,13 +1,23 @@
-# SwiftCodeGenerator
-This simple code genrate the swift code from swift object . Mainly you can use this class to make model  classes for your Server Api's  or other Swift json object . 
+  # How To use?
+  ## There are some steps which are written below .
+  • Add More dates format when you incounter in your code .
+  ```
+  LeoDates.share.addFormat("yyyy-MM-dd")
+  LeoDates.share.addFormat("yyyy-MM-dd")
+  
+```
+### From String  to Date or String
 
-### How to use this 
-
-    • 1 Add class  `LeoSwiftCoder` in your code 
-    •2 It is very simple to use just pass swift object to class , It will print the `swift code` in console . 
-
-```swift 
-let swiftCoder = LeoSwiftCoder()
-swiftCoder.leoClassMake(withName: "UserMessages", json: json)
-print("Enjoy the Code ")
+1.  Make sure your date format  is added to LeoDates.Share with above code
+ 
+ ```
+  let stringDate = "2019-09-08"
+  print(stringDate.leoDateString(toFormat: "dd-MMMM-YYYY hh:mm a"))
+ ``` 
+  
+  
+  ### From Date to Date or String  
+  ```
+  let  someDate = Date()
+  print(someDate.leoDateString(toFormat: "dd-MMMM-yyyy hh:mm:ss"))
 ```
