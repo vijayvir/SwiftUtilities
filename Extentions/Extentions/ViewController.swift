@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
 		var  someString : String? = ""
 
-     someString = nil
+          someString = nil
 
 
 
