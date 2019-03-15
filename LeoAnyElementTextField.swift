@@ -1,12 +1,16 @@
 import Foundation
 import UIKit
-protocol  LeoElementable {
+@objc protocol  LeoElementable {
     var leoText : String { get  }
+    @objc optional var leoTextOnPicker : String { get  }
+    
     
 }
+
 class ModelDetails  {
 }
 extension ModelDetails : LeoElementable{
+    
     var leoText: String {
         return "dsda"
     }
@@ -18,20 +22,21 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
     @IBInspectable var shouldFirst: Bool = false
     
     var elements : [LeoElementable] = []
-  
+    var selectedElement : LeoElementable?
+    
     // Use this class to have single image.
     public  var closureDidSelectElement: ((_ subcategory: LeoElementable) -> Void)?
     
     func configure(withElements : [LeoElementable]) {
         elements = withElements
-    
+        
         if elements.count <= 0 {
             self.isEnabled = false
-        
+            
         }else {
             self.isEnabled = true
         }
-       
+        
         pickerView.selectRow(0, inComponent: 0, animated: true)
         
         
@@ -45,7 +50,7 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
                 
             }
         }
-
+        
     }
     required init?(coder aDecoder: NSCoder) {
         
@@ -69,16 +74,16 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
         }
         
         
-            if shouldFirst {
-                if let index = pickerView.selectedRow(inComponent: 0) as Int? {
-                    
-                    if elements.count > 0 {
-                        let element: LeoElementable = elements[index]
-                        self.text = element.leoText
-                    }
-                    
+        if shouldFirst {
+            if let index = pickerView.selectedRow(inComponent: 0) as Int? {
+                
+                if elements.count > 0 {
+                    let element: LeoElementable = elements[index]
+                    self.text = element.leoText
                 }
-
+                
+            }
+            
         }
         
         
@@ -93,7 +98,7 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
         label.textAlignment = .center
         label.textColor = .black
         label.backgroundColor =  .clear
-       
+        
         let barButton = UIBarButtonItem(customView: label)
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         var arraybutton: [UIBarButtonItem] = []
@@ -119,6 +124,7 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
             let element: LeoElementable = elements[index]
             self.text = element.leoText
             closureDidSelectElement?(element)
+            selectedElement = element
         }
         _ = resignFirstResponder()
         
@@ -141,11 +147,19 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         let element: LeoElementable = elements[row]
-        return element.leoText
+        
+        if element.leoTextOnPicker != nil {
+            return element.leoTextOnPicker
+        }else {
+            return element.leoText
+        }
+        
+        
     }
     func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
         let element: LeoElementable = elements[row]
         self.text = element.leoText
         closureDidSelectElement?(element)
+        selectedElement = element
     }
 }
