@@ -11,6 +11,13 @@
  Simple Post or Get
  Single Upload
  Multiple Upload
+ 
+ <key>NSAppTransportSecurity</key>
+ <dict>
+ <key>NSAllowsArbitraryLoads</key>
+ <true/>
+ </dict>
+ 
  */
 import Foundation
 import Alamofire

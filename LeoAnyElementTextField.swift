@@ -17,6 +17,13 @@ extension ModelDetails : LeoElementable{
 }
 
 class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDataSource {
+    enum SelectedBy {
+        
+        case didSelectRow
+        case doneButtonTap
+    }
+    
+    
     var pickerView: UIPickerView = UIPickerView()
     
     @IBInspectable var shouldFirst: Bool = false
@@ -25,7 +32,7 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
     var selectedElement : LeoElementable?
     
     // Use this class to have single image.
-    public  var closureDidSelectElement: ((_ subcategory: LeoElementable) -> Void)?
+    public  var closureDidSelectElement: ((_ subcategory: LeoElementable , SelectedBy) -> Void)?
     
     func configure(withElements : [LeoElementable]) {
         elements = withElements
@@ -123,7 +130,7 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
         if let index = pickerView.selectedRow(inComponent: 0) as Int? {
             let element: LeoElementable = elements[index]
             self.text = element.leoText
-            closureDidSelectElement?(element)
+            closureDidSelectElement?(element, LeoAnyElementTextField.SelectedBy.doneButtonTap)
             selectedElement = element
         }
         _ = resignFirstResponder()
@@ -159,7 +166,7 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
         let element: LeoElementable = elements[row]
         self.text = element.leoText
-        closureDidSelectElement?(element)
+        closureDidSelectElement?(element, LeoAnyElementTextField.SelectedBy.doneButtonTap)
         selectedElement = element
     }
 }
