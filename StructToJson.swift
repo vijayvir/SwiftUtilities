@@ -9,149 +9,196 @@
 import Foundation
 import UIKit
 
-protocol JSONRepresentable {
-    var jsonStruct: AnyObject {
+protocol LeoJsonRepresentable {
+    var jsonStruct: Any {
         get
     }
 }
 
-protocol StructJSONSerializable: JSONRepresentable {
-
+protocol LeoSerializable: LeoJsonRepresentable {
+    
 }
 
-extension StructJSONSerializable {
-    var jsonStruct: AnyObject {
-        var representation = [String: AnyObject]()
+func LeoDiscription( object : Any) -> [String : Any]{
+    var representation = [String: Any]()
+    for case let (variableName?, variableValue) in Mirror(reflecting: object).children {
+        switch variableValue {
+        case let value :
+            if let some =  Mirror(reflecting: value).displayStyle as? Swift.Mirror.DisplayStyle {
+                switch some {
+                case .struct:
+                    representation[variableName] =  LeoDiscription(object: value)
+                case .class:
+                    representation[variableName] =  LeoDiscription(object: value)
+                case .enum:
+                    print("enum")
+                case .tuple:
+                    print("tuple")
+                case .optional:
+                    print("optional")
+                case .collection:
+                    representation[variableName] = value
+                case .dictionary:
+                    representation[variableName] = value
+                case .set:
+                    print("set")
+                }
+                
+            }else {
+                representation[variableName] = value
+            }
+            
+            
+            
+        }
+    }
+    return representation
+}
 
-        for case let (label?, value) in Mirror(reflecting: self).children {
-
-            // print("->" ,value , type(of: value) ,"->" ,label , type(of: label) )
-
-            switch value {
-            case let value as JSONRepresentable:
-                //  print(type(of: value) , label  , type(of: value.jsonStruct ))
-                representation[label] = value.jsonStruct
-
-            case let value as AnyObject:
-
-                // print("***************  ",type(of: value) , label )
-
-                representation[label] = value
-
-            default:
-
-                print("someMoretings ")
-
-                break
+extension LeoSerializable {
+    var jsonStruct: Any {
+        var representation = [String: Any]()
+        for case let (variableName?, variableValue) in Mirror(reflecting: self).children {
+            switch variableValue {
+            case let value as LeoJsonRepresentable:
+                representation[variableName] = value.jsonStruct
+                
+            case let value :
+                if let some =  Mirror(reflecting: value).displayStyle as? Swift.Mirror.DisplayStyle {
+                    
+                    switch some {
+                        
+                    case .struct:
+                        representation[variableName] =  LeoDiscription(object: value)
+                        //representation[variableName] = value.jsonStruct
+                        
+                        
+                    case .class:
+                        representation[variableName] =  LeoDiscription(object: value)
+                    case .enum:
+                        print("enum")
+                    case .tuple:
+                        print("tuple")
+                    case .optional:
+                        print("optional")
+                    case .collection:
+                        representation[variableName] = value
+                    case .dictionary:
+                        representation[variableName] = value
+                    case .set:
+                        print("set")
+                    }
+                    
+                }else {
+                    representation[variableName] = value
+                }
+                
+                
+                
             }
         }
-
+        
         return representation as AnyObject
     }
-
-    func toJsonObect() -> AnyObject {
-        let jsonString = self.toJsonString()
-
-        let data: NSData = jsonString!.data(using: String.Encoding.utf8)! as NSData
-
-        //    _: NSError?
-
-        do {
-            if let dictionaryOK = try JSONSerialization.jsonObject(with: data as Data, options: []) as? AnyObject {
-
-                return dictionaryOK
-                // parse JSON
+    
+    func toJsonObect() -> Any {
+        if  let jsonString = self.toJsonString() {
+            let data: NSData = jsonString.data(using: String.Encoding.utf8)! as NSData
+            
+            do {
+                if let dictionaryOK = try JSONSerialization.jsonObject(with: data as Data, options: []) as? Any {
+                    return dictionaryOK
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
         }
-
-        //let jsonObject: AnyObject? =   JSONSerialization.JSONObjectWithData(data as Data, options: .readingOptions.allZeros) as AnyObject!
-
-        //  a(data,     options: JSONSerialization.ReadingOptions.allZeros, error: &error)
-
-        return "sdd" as AnyObject
+        return "not a proper Json" as Any
     }
-
+    
     func toJsonString() -> String? {
-
         guard JSONSerialization.isValidJSONObject(jsonStruct) else {
             print("not a proper Json")
             return nil
         }
-
+        
         do {
-
+            
             let data = try JSONSerialization.data(withJSONObject: jsonStruct, options: [])
-
+            
             return String(data: data, encoding: String.Encoding.utf8)
         } catch {
             return nil
         }
     }
-
+    
     func toEncodingURLStr() -> String? {
-        let jsonObject = self.toJsonObect() as! [String: String]
-
-        let strEnove = jsonObject.map { $0.key + "=" + ($0.value.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed))! }
-
-        let some = strEnove.reduce("") { $0.isEmpty ? $1 : $0 + "&" + $1 }
-
-        return some
-
+        if let jsonObject = self.toJsonObect() as? [String: Any] {
+            
+            let strEnove = jsonObject.map { $0.key + "=" + ("\($0.value)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed))! }
+            
+            let some = strEnove.reduce("") { $0.isEmpty ? $1 : $0 + "&" + $1 }
+            
+            return some
+        } else  {
+            return ""
+        }
+        
+        
+        
     }
-
+    
 }
 
-extension Date: StructJSONSerializable {
-
+extension Date: LeoSerializable {
+    
     var jsonStruct: AnyObject {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
         return formatter.string(from: self) as AnyObject
     }
-
+    
 }
 
 /*
  
  struct  Family : StructJSONSerializable
  {
-    var mother: String
-    var father: String
+ var mother: String
+ var father: String
  }
  
  struct Owner : StructJSONSerializable
  {
-    var name: String
-    var timestamp: Date
-    var phoneNumbers : [String]
-    var dob : [String : String]
+ var name: String
+ var timestamp: Date
+ var phoneNumbers : [String]
+ var dob : [String : String]
  
-     -> var family: Family
+ -> var family: Family
  
  }
  
  struct Car: StructJSONSerializable
  {
-    var manufacturer: String
-    var model: String
-    var mileage: Float
+ var manufacturer: String
+ var model: String
+ var mileage: Float
  
-    -> var owner: Owner
+ -> var owner: Owner
  
  }
  
  var car = Car(
-                manufacturer: "Tesla", model: "Model T",
-                mileage: 1234.56,
-                owner: Owner(
-                            name: "Emial" ,
-                            timestamp: Date(),
-                            phoneNumbers : ["7896544","45632178"] ,
-                            dob :  ["month":"11" , "date":"30 " ],
-                            family :Family(mother: "Dad", father: "Mom")
-                            )
+ manufacturer: "Tesla", model: "Model T",
+ mileage: 1234.56,
+ owner: Owner(
+ name: "Emial" ,
+ timestamp: Date(),
+ phoneNumbers : ["7896544","45632178"] ,
+ dob :  ["month":"11" , "date":"30 " ],
+ family :Family(mother: "Dad", father: "Mom")
+ )
  )
  
  car.model = "Maruti"
