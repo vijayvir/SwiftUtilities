@@ -7,15 +7,21 @@
 //
 import Foundation
 import UIKit
+
+
 let appNameAlert = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+
+
 class Alert: UIAlertController {
     class func showSimple(_ message: String, completionHandler: (() -> Swift.Void)? = nil) {
+        let keywindow = UIApplication.shared.keyWindow
+       // let mainController = keywindow?.rootViewController
         let alert = UIAlertController(title: appNameAlert, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_: UIAlertAction!) in
             print("Heloo ")
             completionHandler?()
         }))
-        UIApplication.topViewControllerLeo()?.present(alert, animated: true, completion: {
+        UIApplication.topViewController()?.present(alert, animated: true, completion: {
         })
         
     }
@@ -23,15 +29,17 @@ class Alert: UIAlertController {
     // make sure you have navigation  view controller
     
     class func showComplex(title: String? = "",
-                           message: String,
-                           preferredStyle: UIAlertController.Style? = .alert,
-                           cancelTilte: String,
-                           otherButtons: String ...,
+                         message: String,
+                         preferredStyle: UIAlertController.Style? = .alert,
+                         cancelTilte: String,
+                         otherButtons: String ...,
         comletionHandler: ((Swift.Int) -> Swift.Void)? = nil) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle!)
         
         for i in otherButtons {
+            //  print( UIApplication.topViewController() ?? i  )
+            
             alert.addAction(UIAlertAction(title: i, style: UIAlertAction.Style.default,
                                           handler: { (action: UIAlertAction!) in
                                             
@@ -51,7 +59,7 @@ class Alert: UIAlertController {
             ))
         }
         
-        UIApplication.topViewControllerLeo()?.present(alert, animated: true, completion: {
+        UIApplication.topViewController()?.present(alert, animated: true, completion: {
             
         })
         
@@ -60,17 +68,17 @@ class Alert: UIAlertController {
 }
 
 extension UIApplication {
-    class func topViewControllerLeo(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
-            return topViewControllerLeo(controller: navigationController.visibleViewController)
+            return topViewController(controller: navigationController.visibleViewController)
         }
         if let tabController = controller as? UITabBarController {
             if let selected = tabController.selectedViewController {
-                return topViewControllerLeo(controller: selected)
+                return topViewController(controller: selected)
             }
         }
         if let presented = controller?.presentedViewController {
-            return topViewControllerLeo(controller: presented)
+            return topViewController(controller: presented)
         }
         
         // need R and d
