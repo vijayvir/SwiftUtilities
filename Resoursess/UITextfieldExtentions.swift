@@ -38,9 +38,34 @@ extension UITextField {
     }
     func lenght() -> Bool {
         if self.text.leoSafe().count <= 0 {
-              return false
-            }
-            return true
+            return false
         }
+        return true
+    }
+    
+}
+fileprivate var leoTextfieldClosureKey: UInt8 = 0
+
+extension UITextField {
+    
+    var closureOnEvent : (()-> Void)?{
+        set (newValue) {
+            objc_setAssociatedObject(self, &leoTextfieldClosureKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+        get{
+            return objc_getAssociatedObject(self, &leoTextfieldClosureKey) as?  (()-> Void)
+        }
+    }
+    
+    func leoListen( on : UIControl.Event = .editingChanged  ,  callback : (() -> Void )? = nil ) {
+        self.addTarget(self, action: #selector(textFieldEditingDidChange(_:event:)), for:on)
+        closureOnEvent = callback
+    }
+    @objc func textFieldEditingDidChange(_ sender: Any , event :  UIControl.Event){
+        
+        closureOnEvent?()
+        
+        
+    }
     
 }
