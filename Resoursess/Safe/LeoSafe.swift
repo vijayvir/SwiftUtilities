@@ -1,20 +1,3 @@
-//
-//  LeoSafe.swift
-//  Hive
-//
-//  Created by Nitish Sharma on 13/09/18.
-//  Copyright © 2018 vijayvir Singh. All rights reserved.
-//
-
-import Foundation
-import UIKit
-//
-//  LeoExtString.swift
-//  Extentions
-//
-//  Created by vijay vir on 9/8/17.
-//  Copyright © 2017 vijay vir. All rights reserved.
-//
 
 import Foundation
 //https://medium.com/ios-os-x-development/handling-empty-optional-strings-in-swift-ba77ef627d74
@@ -52,4 +35,24 @@ extension Optional where Wrapped == Bool {
     }
 }
 
-
+extension Int {
+    var leoString : String {
+        return "\(self)"
+    }
+}
+extension String {
+    var leoInt : Int {
+        return Int(self) ?? 0
+    }
+}
+//extension Optional <T> where Wrapped == Array<T> {
+//
+//    func leoSafe(defaultValue : Bool? = false ) -> Array<Any> {
+//
+//        guard let strongSelf = self else {
+//            return defaultValue!
+//        }
+//
+//        return strongSelf
+//    }
+//}

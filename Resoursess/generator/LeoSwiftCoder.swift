@@ -31,17 +31,20 @@ class LeoSwiftCoder {
             if let someJson = json as? [String : Any] {
                 print("class \(withName) {")
                 print("var serverData : [String: Any] = [:]")
-                for key in someJson.keys {
+                for key in someJson.keys.sorted(by: { (firstKey, secondKey) -> Bool in
+                    return firstKey <= secondKey
+                }) {
                     print( "var \(key.unCapitalizedLSC) : \(self.typeOf(send: someJson[key]! , key : key))?" )
                 }
                 print("init(dict: [String: Any]){")
                 print(" self.serverData = dict \n ")
+                
                 for key in someJson.keys {
                     print( self.defineVariable(key :key , send: someJson[key]!) )
                     
                 }
                 print("}")
-             
+                
                 for object in someJson.keys {
                     if let nextObject = someJson[object] as? [String : Any] {
                         self.leoClassMake(withName: object.capitalized, json: nextObject)
@@ -54,24 +57,24 @@ class LeoSwiftCoder {
                     }
                     
                 }
-                   print("}")
+                print("}")
             }
             
         case is Array<String> :
-           if let someJson = json as? [String] {
-            if someJson.count > 0 {
-                print("class \(withName) {")
-                print("var serverData : String = \"\"")
-                
-                print("init(dict: String){")
-                print(" self.serverData = dict \n ")
-                
-                
-                print("}")
-                print("}")
+            if let someJson = json as? [String] {
+                if someJson.count > 0 {
+                    print("class \(withName) {")
+                    print("var serverData : String = \"\"")
+                    
+                    print("init(dict: String){")
+                    print(" self.serverData = dict \n ")
+                    
+                    
+                    print("}")
+                    print("}")
+                }
             }
-           }
-        
+            
             
         case is Int :
             print("")
@@ -118,10 +121,6 @@ class LeoSwiftCoder {
             return  some
         case is Int :
             return "if let \(key.unCapitalizedLSC) = dict[\"\(key)\"] as? Int { \n self.\(key.unCapitalizedLSC) = \(key.unCapitalizedLSC) \n }"
-            
-        case is Double :
-            return "if let \(key.unCapitalizedLSC) = dict[\"\(key)\"] as? Double { \n self.\(key.unCapitalizedLSC) = \(key.unCapitalizedLSC) \n }"
-            
         case is Array<String>  :
             
             let some =  """
@@ -182,10 +181,6 @@ class LeoSwiftCoder {
             }
         case is Int :
             return "Int"
-        case is Double :
-            return "Double"
-       
-            
         case is Array<Any> :
             return "Array<Any>"
         case is Dictionary<String, Any> :
