@@ -55,6 +55,8 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     
     public  var closureDidFinishPickingAnImage: ((_ image: [String]) -> Void)?
     
+    public  var closureDidFinishPickingAnUIImage: ((_ image: UIImage) -> Void)?
+    
     public  var closureDidTap: (() -> Void)?
     
     public  var closureDidTapCancel: (() -> Void)?
@@ -111,10 +113,14 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
         imagePaths.removeAll()
         
         self.closureDidTap?()
+        var style : UIAlertController.Style = .actionSheet
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            style = .alert
+        }
         
         PhotoAlertHelper.alertView(title: appNameUIPhotosButton,
                                    message: "Select image.",
-                                   preferredStyle: .actionSheet,
+                                   preferredStyle: style,
                                    cancelTilte: "Cancel",
                                    otherButtons: "Camera", "Gallery",
                                    comletionHandler: { (index: Swift.Int) in
@@ -183,7 +189,7 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
         imagePaths.append(filePath.path)
         
         let image = info[.originalImage] as! UIImage
-        
+        self.closureDidFinishPickingAnUIImage?(image)
         let imageData = image.jpegData(compressionQuality: 0.3)
         
         do {
@@ -202,7 +208,12 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
                 self.closureDidFinishPicking?(self.imagePaths)
                 
             } else {
-                PhotoAlertHelper.alertView(imagesPath: self.imagePaths, message: "Would you like  to select more pictures ", preferredStyle: .actionSheet,
+                var style : UIAlertController.Style = .actionSheet
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    style = .alert
+                }
+                
+                PhotoAlertHelper.alertView(imagesPath: self.imagePaths, message: "Would you like  to select more pictures ", preferredStyle: style,
                                            cancelTilte: "No",
                                            otherButtons: "Camera", "Gallery",
                                            comletionHandler: { [unowned self] (index: Swift.Int) in
