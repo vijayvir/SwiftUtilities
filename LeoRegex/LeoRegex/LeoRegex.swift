@@ -8,7 +8,12 @@
 //http://en.swifter.tips/regex/
 //https://github.com/apple/swift-evolution/blob/master/proposals/0077-operator-precedence.md
 //https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149
+//https://regexr.com/4f6q7
 
+/*
+ \d means [0-9]
+ () only needed if you want to extract the matching parts
+ */
 import Foundation
 precedencegroup ComparisonPrecedence {
 	associativity: none
@@ -28,6 +33,7 @@ struct LeoRegex {
 		case phoneNumberUSA
 		case other
 		case alphabets
+        case numberDecimal
 
 		var pattern : String {
 			switch self {
@@ -47,6 +53,10 @@ struct LeoRegex {
 				return ""
 			case .alphabets:
 				return "^[a-z]{1,}$"
+            case .numberDecimal:
+                return "^([0-9]+).([0-9]{0,2})$"
+                
+                
 			default:
 				return ""
 			}

@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-
-		if "SomePattern" =^ LeoRegex.LeoRegexType.alphabets.pattern {
+//"^([0-9]+).([0-9]{0,2})$"
+		if "23.52" =^ LeoRegex.LeoRegexType.numberDecimal.pattern {
        print("Is have alphabets.")
 		} else {
       print("Is not  have alphabets.")

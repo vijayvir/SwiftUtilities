@@ -30,7 +30,25 @@ class GenericViewController: UIViewController {
 
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: “orientation”)
+    }
+    override func shouldAutorotate() -> Bool {
+        // Lock autorotate
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        
+        // Only allow Portrait
+        return Int(UIInterfaceOrientationMask.landscapeLeft.rawValue)
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        
+        // Only allow Portrait
+        return UIInterfaceOrientation.landscapeLeft
+    }
     @IBAction func actionBack(_: Any) {
 
         self.navigationController?.popViewController(animated: true)
