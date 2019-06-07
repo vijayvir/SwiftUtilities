@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 import UserNotifications
+// MARK : Key features
+/*
+ placeholderColor
+ 
+ */
+
 
 extension UITextField {
     func placeholderColor( _ text : String? = "" ,   color :UIColor? = .gray  ) {
@@ -55,9 +61,59 @@ extension UITextField {
 }
 fileprivate var leoTextfieldClosureKey: UInt8 = 0
 
+fileprivate var leoTextfieldShouldChangeCharactersInClosureKey: UInt8 = 0
+
+extension UITextField  : UITextFieldDelegate{
+    
+    private  var closureShouldChangeCharactersIn :((String)-> Bool)? {
+        set (newValue) {
+            objc_setAssociatedObject(self, &leoTextfieldShouldChangeCharactersInClosureKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+        get{
+            return objc_getAssociatedObject(self, &leoTextfieldShouldChangeCharactersInClosureKey) as?  ((String) -> Bool )
+        }
+    }
+    
+    func leoShouldChangeCharactersIn( callback : @escaping ((String) -> Bool )) {
+        self.delegate = self
+        closureShouldChangeCharactersIn = callback
+        
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        return  closureShouldChangeCharactersIn?(string) ?? false
+    }
+    
+}
+
+
 extension UITextField {
     
-    var closureOnEvent : (()-> Void)?{
+    // var closureObserver :
+    
+    
+    
+    @objc func yourfunction(notfication: NSNotification) {
+        print("xxx")
+    }
+    
+    func leoObserver( on : UIControl.Event = .editingChanged  ,  callback : (() -> Void )? = nil ) {
+        if callback != nil  {
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(yourfunction(notfication:)), name: Notification.Name("postNotifi"), object: on)
+        }
+        
+    }
+    
+    
+    
+    
+}
+extension UITextField {
+    
+    private  var closureOnEvent : (()-> Void)?{
         set (newValue) {
             objc_setAssociatedObject(self, &leoTextfieldClosureKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
@@ -66,7 +122,9 @@ extension UITextField {
         }
     }
     
+    
     func leoListen( on : UIControl.Event = .editingChanged  ,  callback : (() -> Void )? = nil ) {
+        
         self.addTarget(self, action: #selector(textFieldEditingDidChange(_:event:)), for:on)
         closureOnEvent = callback
     }
@@ -76,5 +134,4 @@ extension UITextField {
         
         
     }
-    
 }
