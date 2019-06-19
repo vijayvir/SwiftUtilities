@@ -49,6 +49,7 @@
  ss   = two digits of second (00 through 59)
  s    = one or more digits representing a decimal fraction of a second
  TZD  = time zone designator (Z or +hh:mm or -hh:mm)
+ EEEE saturday
  */
 
 import Foundation
