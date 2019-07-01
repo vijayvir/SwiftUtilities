@@ -108,7 +108,7 @@ extension UserDefaults {
 
 extension UserDefaults {
     
-    func leoRunOnce( id : String ,  _ callBack : (()->Void)? = nil  ) {
+    func leoRunOnce( id : String ,_ callBack : (()->Void)? = nil  )  ,_ callBack : (()->Void)? = nil  ) {
         
         if  UserDefaults.standard.bool(forKey:id) == false {
             UserDefaults.standard.set(true, forKey: id)
