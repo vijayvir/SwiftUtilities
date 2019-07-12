@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181AF33E22D865F200428DCA /* Simulator Screen Shot - iPhone Xʀ - 2019-07-12 at 12.23.27.png in Resources */ = {isa = PBXBuildFile; fileRef = 181AF33D22D865F200428DCA /* Simulator Screen Shot - iPhone Xʀ - 2019-07-12 at 12.23.27.png */; };
 		18A01E8322D84A6500199C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A01E8222D84A6500199C41 /* AppDelegate.swift */; };
 		18A01E8522D84A6500199C41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A01E8422D84A6500199C41 /* ViewController.swift */; };
 		18A01E8822D84A6500199C41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A01E8622D84A6500199C41 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181AF33D22D865F200428DCA /* Simulator Screen Shot - iPhone Xʀ - 2019-07-12 at 12.23.27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone Xʀ - 2019-07-12 at 12.23.27.png"; sourceTree = "<group>"; };
 		18A01E7F22D84A6500199C41 /* LeoAnySelectableTextFieldDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeoAnySelectableTextFieldDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A01E8222D84A6500199C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A01E8422D84A6500199C41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,7 @@
 		18A01E8C22D84A6700199C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18A01E8E22D84A6700199C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A01E9622D84BCE00199C41 /* LeoAnySelectableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoAnySelectableTextField.swift; sourceTree = "<group>"; };
+		18A01E9A22D8629600199C41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 				18A01E8222D84A6500199C41 /* AppDelegate.swift */,
 				18A01E8422D84A6500199C41 /* ViewController.swift */,
 				18A01E9622D84BCE00199C41 /* LeoAnySelectableTextField.swift */,
+				181AF33D22D865F200428DCA /* Simulator Screen Shot - iPhone Xʀ - 2019-07-12 at 12.23.27.png */,
+				18A01E9A22D8629600199C41 /* README.md */,
 				18A01E8622D84A6500199C41 /* Main.storyboard */,
 				18A01E8922D84A6700199C41 /* Assets.xcassets */,
 				18A01E8B22D84A6700199C41 /* LaunchScreen.storyboard */,
@@ -127,6 +132,7 @@
 			files = (
 				18A01E8D22D84A6700199C41 /* LaunchScreen.storyboard in Resources */,
 				18A01E8A22D84A6700199C41 /* Assets.xcassets in Resources */,
+				181AF33E22D865F200428DCA /* Simulator Screen Shot - iPhone Xʀ - 2019-07-12 at 12.23.27.png in Resources */,
 				18A01E8822D84A6500199C41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
