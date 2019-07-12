@@ -1,6 +1,11 @@
 #  LeoAnySelectableTextField
 
-In this class user can selecte single and multiple options from the tableview and show the text according to his choice in the textfield  in the closure 
+In this class developer  can selecte single and multiple options from the tableview and show the text according to his choice in the textfield  in the closure function
+
+![Image](https://github.com/vijayvir/SwiftUtilities/blob/master/Classes/LeoAnySelectableTextFieldDemo/LeoAnySelectableTextFieldDemo/Simulator%20Screen%20Shot%20-%20iPhone%20Xʀ%20-%202019-07-12%20at%2012.23.27.png)
+
+
+
 
 
 
@@ -44,5 +49,6 @@ print(elements.count)
 * `isSingleSelection` with this property from interface or with code developer can change the functionilty from Multiple selection to Single selection 
 * `tintColorLeo` Developer can change the tint color of the controls 
 
+ 
  
 
