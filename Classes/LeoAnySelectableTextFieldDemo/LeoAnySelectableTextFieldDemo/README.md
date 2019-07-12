@@ -1,6 +1,6 @@
 #  LeoAnySelectableTextField
 
-In this class developer  can selecte single and multiple options from the tableview and show the text according to his choice in the textfield  in the closure function
+In this class developer  can select single or multiple options from the tableview and show the text according to his choice in the textfield  in the closure function
 
 
 
@@ -42,8 +42,10 @@ print(elements.count)
     @objc optional var leoImage : UIImage? { get  }
 }
 ```
+
  The protocol have the 4 properties
- `leoIsSelected ` and  leoTitle are the mandatory one,  other two are optional 
+
+* `leoIsSelected ` and  leoTitle are the mandatory one,  other two are optional 
  
 * `selectedElements `  with this variable user can access the selected elements from textfield object 
 * `isSingleSelection` with this property from interface or with code developer can change the functionilty from Multiple selection to Single selection 
