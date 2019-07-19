@@ -10,8 +10,8 @@ import UIKit
 
 class Employee {
     
-    var name : String = "Viajyvir "
-    var department  : String = "Iphone"
+    var name : String = "Viajyvirtgfrgtk wiruhyiuew yuiryui eywuiry eiuwwyriuyeiuwyr iuwyeuiryiu eyi "
+    var department  : String = "Iphonrew reiuw hruiehwuirhy iuewyuiry uieywruiy iuewyriu eywiue"
     var leoIsSelected : Bool = false
     
     

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-func mainThreadLeo(_ callback : @escaping (() -> ())) {
+func leoMainThread(_ callback : @escaping (() -> ())) {
     DispatchQueue.main.async {
         callback()
     }

@@ -12,23 +12,23 @@ import Foundation
     var leoIsSelected  : Bool {get set }
     
     var leoTitle : String { get  }
- 
+    
     @objc optional var leoDetailText : String? { get  }
-   
+    
     @objc optional var leoImage : UIImage? { get  }
 }
 
 
 
 class LeoAnySelectableTextField: UITextField  {
-
+    
     @IBInspectable var tintColorLeo : UIColor = .blue {
         didSet{
             
             closureUpdateUI?()
         }
     }
-
+    
     private var closureUpdateUI : (() -> Void)?
     
     
@@ -47,7 +47,7 @@ class LeoAnySelectableTextField: UITextField  {
         return tableView
     }()
     
-
+    
     private var elements: [LeoSelectable] = []
     
     var selectedElements : [LeoSelectable] {
@@ -58,9 +58,9 @@ class LeoAnySelectableTextField: UITextField  {
             }
             return false
         })
-
+        
     }
-   private  var closureDidSelectElements: ((_ selectedElements: [LeoSelectable]) -> Void)?
+    private  var closureDidSelectElements: ((_ selectedElements: [LeoSelectable]) -> Void)?
     
     
     func withClosureDidSelectElements(_ closure :  @escaping  (_ selectedElements: [LeoSelectable]) -> Void) -> LeoAnySelectableTextField {
@@ -79,6 +79,7 @@ class LeoAnySelectableTextField: UITextField  {
         
         super.init(coder: aDecoder)
         
+        
         addInputAccessoryView()
         
         self.inputView = tableView
@@ -92,7 +93,7 @@ class LeoAnySelectableTextField: UITextField  {
     }
     
     
-    func configure(withElements : [LeoSelectable]) -> LeoAnySelectableTextField {
+    func configure(withElements : [LeoSelectable] , _ closure :  ((_ selectedElements: [LeoSelectable]) -> Void)? = nil   ) -> LeoAnySelectableTextField {
         self.elements = withElements
         self.tableView.reloadData()
         
@@ -102,28 +103,30 @@ class LeoAnySelectableTextField: UITextField  {
         }else {
             self.isEnabled = true
         }
+        closure?(withElements)
         
-        return self 
+        
+        return self
     }
     
     private func addInputAccessoryView()  {
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-      //  toolbar.barTintColor = UIColor.darkText
+        //  toolbar.barTintColor = UIColor.darkText
         let donebutton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(menuDoneButtonTapped(sender:)))
-     
+        
         let cancelbutton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(menuCancelButtonTapped(sender:)))
         cancelbutton.tintColor = tintColorLeo
         
-    
+        
         
         
         let label = UILabel()
         label.text = "Select atleast one."
         label.font = UIFont(name: "SourceSansPro-Regular", size: 13)
         label.textAlignment = .center
-
+        
         label.backgroundColor =  .clear
         
         closureUpdateUI = {
@@ -143,16 +146,16 @@ class LeoAnySelectableTextField: UITextField  {
         arraybutton.append(space)
         arraybutton.append(donebutton)
         toolbar.setItems(arraybutton, animated: true)
-          self.inputAccessoryView = toolbar
+        self.inputAccessoryView = toolbar
     }
     
     @objc func menuDoneButtonTapped(sender _: UIBarButtonItem) {
         self.closureDidSelectElements?(selectedElements)
-       _ = resignFirstResponder()
+        _ = resignFirstResponder()
     }
     
     @objc func menuCancelButtonTapped(sender _: UIBarButtonItem) {
-       _ = resignFirstResponder()
+        _ = resignFirstResponder()
         
     }
     
@@ -179,22 +182,22 @@ extension LeoAnySelectableTextField: UITableViewDataSource, UITableViewDelegate 
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-   
+        
         let selectedElement = elements[indexPath.row]
-
+        
         
         if isSingleSelection {
             
             for  element in elements {
-                  element.leoIsSelected = false
+                element.leoIsSelected = false
             }
             
             selectedElement.leoIsSelected =  !selectedElement.leoIsSelected
         }else {
-                    selectedElement.leoIsSelected =  !selectedElement.leoIsSelected
+            selectedElement.leoIsSelected =  !selectedElement.leoIsSelected
         }
         
-
+        
         self.closureDidSelectElements?(selectedElements)
         self.tableView.reloadData()
     }
@@ -205,9 +208,9 @@ extension LeoAnySelectableTextField: UITableViewDataSource, UITableViewDelegate 
 class  LeoAnySelectableTableViewCell         : UITableViewCell {
     
     var element : LeoSelectable?
-   
-     func configure( element : LeoSelectable) {
-     
+    
+    func configure( element : LeoSelectable) {
+        
         self.element = element
         
         self.textLabel?.text = element.leoTitle
@@ -217,14 +220,14 @@ class  LeoAnySelectableTableViewCell         : UITableViewCell {
         }
         if element.leoImage  != nil {
             
-             self.imageView?.contentMode = .scaleAspectFit
+            self.imageView?.contentMode = .scaleAspectFit
             self.imageView?.image =  element.leoImage!
         }
         
         if element.leoIsSelected {
-                  self.accessoryType = .checkmark
+            self.accessoryType = .checkmark
         }else {
-                self.accessoryType = .none
+            self.accessoryType = .none
         }
     }
     
@@ -236,7 +239,7 @@ class  LeoAnySelectableTableViewCell         : UITableViewCell {
         self.textLabel?.font = UIFont(name: "SourceSansPro-Semibold", size: 13)
         self.textLabel?.textAlignment = .left
         
-      
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
