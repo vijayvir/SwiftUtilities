@@ -20,6 +20,140 @@ import Foundation
 
 
 
+
+class  LeoAnySelectableView : UIStackView {
+    
+    @IBInspectable var tintColorLeo : UIColor = .blue {
+        didSet{
+            
+            closureUpdateUI?()
+        }
+    }
+    
+    private var closureUpdateUI : (() -> Void)?
+    
+    
+    @IBInspectable var isSingleSelection : Bool = false
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.allowsMultipleSelection = true
+        tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.backgroundColor = UIColor.init(displayP3Red: 246, green: 246, blue: 246, alpha: 1)
+        tableView.register(LeoAnySelectableTableViewCell.self, forCellReuseIdentifier: "LeoAnySelectableTableViewCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    private var elements: [LeoSelectable] = []
+    
+    var selectedElements : [LeoSelectable] {
+        
+        return elements.filter({ (element) -> Bool in
+            if element.leoIsSelected {
+                return  true
+            }
+            return false
+        })
+        
+    }
+    private  var closureDidSelectElements: ((_ selectedElements: [LeoSelectable]) -> Void)?
+    
+    
+    func withClosureDidSelectElements(_ closure :  @escaping  (_ selectedElements: [LeoSelectable]) -> Void) -> LeoAnySelectableView {
+        
+        closureDidSelectElements = closure
+        return self
+        
+    }
+    
+    
+    func withStop(){
+        
+    }
+    
+    required init(coder: NSCoder) {
+         super.init(coder: coder)
+        self.addArrangedSubview(tableView)
+  
+        addInputAccessoryView()
+    }
+    
+
+    
+    
+    func configure(withElements : [LeoSelectable] , _ closure :  ((_ selectedElements: [LeoSelectable]) -> Void)? = nil   ) -> LeoAnySelectableView {
+        self.elements = withElements
+        self.tableView.reloadData()
+        
+    
+        closure?(withElements)
+        
+        
+        return self
+    }
+    private func addInputAccessoryView()  {
+
+        
+        closureUpdateUI = {
+            self.tableView.tintColor = self.tintColorLeo
+        }
+        
+        
+    
+    }
+    
+    
+    
+}
+
+extension LeoAnySelectableView: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return elements.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LeoAnySelectableTableViewCell", for: indexPath) as! LeoAnySelectableTableViewCell
+        let element = elements[indexPath.row]
+        cell.configure(element: element)
+        return cell
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedElement = elements[indexPath.row]
+        
+        
+        if isSingleSelection {
+            
+            for  element in elements {
+                element.leoIsSelected = false
+            }
+            
+            selectedElement.leoIsSelected =  !selectedElement.leoIsSelected
+        }else {
+            selectedElement.leoIsSelected =  !selectedElement.leoIsSelected
+        }
+        
+        
+        self.closureDidSelectElements?(selectedElements)
+        self.tableView.reloadData()
+    }
+    
+    
+}
+
+
 class LeoAnySelectableTextField: UITextField  {
     
     @IBInspectable var tintColorLeo : UIColor = .blue {
@@ -205,7 +339,7 @@ extension LeoAnySelectableTextField: UITableViewDataSource, UITableViewDelegate 
     
 }
 
-class  LeoAnySelectableTableViewCell         : UITableViewCell {
+class  LeoAnySelectableTableViewCell  : UITableViewCell {
     
     var element : LeoSelectable?
     

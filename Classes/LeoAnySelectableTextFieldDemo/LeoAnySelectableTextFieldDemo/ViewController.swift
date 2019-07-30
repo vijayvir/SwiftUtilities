@@ -44,6 +44,7 @@ extension Employee : LeoSelectable {
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var viewSelect: LeoAnySelectableView!
     @IBOutlet weak var txtField2: LeoAnySelectableTextField!
     override func viewDidLoad() {
         
@@ -55,6 +56,24 @@ class ViewController: UIViewController {
         let second1 = Employee()
         let third1 = Employee()
         third1.name = "Naman"
+        
+        
+        viewSelect.configure(withElements: [first , second , third  , first1 , second1 , third1])
+            .withClosureDidSelectElements { (elements) in
+                
+                let osme = elements.reduce("", { (result, elemeent) -> String in
+                    
+                    return result +  "," + elemeent.leoTitle
+                })
+                
+             //   self.txtField2.text = osme
+                
+                print(elements.count)
+                
+            }.withStop()
+        
+        
+        
         
         txtField2.configure(withElements: [first , second , third  , first1 , second1 , third1])
             .withClosureDidSelectElements { (elements) in

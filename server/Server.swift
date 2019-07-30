@@ -32,10 +32,59 @@ func isConnectedToInternet() ->Bool {
     return NetworkReachabilityManager()!.isReachable
 }
 
+extension Dictionary {
+    
+    var json: String {
+        let invalidJson = "Not a valid JSON"
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: [])
+            return String(data: jsonData, encoding: String.Encoding.utf8) ?? invalidJson
+        } catch {
+            return invalidJson
+        }
+    }
+    
+    func printJson() {
+        print(json)
+    }
+    
+}
+
+
+
+extension Array {
+    
+    var json: String {
+        let invalidJson = "Not a valid JSON"
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: [])
+            return String(data: jsonData, encoding: String.Encoding.utf8) ?? invalidJson
+        } catch {
+            return invalidJson
+        }
+    }
+    
+    func printJson() {
+        print(json)
+    }
+    
+}
+
+
+
+
 extension String: ParameterEncoding {
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
         var request = try urlRequest.asURLRequest()
         request.httpBody = data(using: .utf8, allowLossyConversion: false)
+        return request
+    }
+    
+}
+extension Data: ParameterEncoding {
+    public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try urlRequest.asURLRequest()
+        request.httpBody = self
         return request
     }
     

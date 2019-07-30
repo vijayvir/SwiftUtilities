@@ -18,9 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select empluess" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-Lv-suk" customClass="LeoAnySelectableTextField" customModule="LeoAnySelectableTextFieldDemo" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select empluess" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-Lv-suk" customClass="LeoAnySelectableTextField" customModule="LeoAnySelectableTextFieldDemo" customModuleProvider="target">
                                 <rect key="frame" x="58" y="104" width="291" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WNi-bm-9Vt"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -31,17 +33,38 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSingleSelection" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-nl-FQ0" customClass="LeoAnySelectableView" customModule="LeoAnySelectableTextFieldDemo" customModuleProvider="target">
+                                <rect key="frame" x="48" y="188" width="301" height="200"/>
+                                <color key="backgroundColor" red="0.90734231470000004" green="0.01405399758" blue="0.013268392530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="cpm-dM-UfB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColorLeo">
+                                        <color key="value" red="0.20766395330000001" green="0.59431105849999999" blue="0.86270338300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gmF-nl-FQ0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="4f8-ei-bqS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zM9-Lv-suk" secondAttribute="trailing" constant="65" id="Hgm-dD-7Bq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gmF-nl-FQ0" secondAttribute="trailing" constant="65" id="IcN-yb-sJd"/>
+                            <constraint firstItem="zM9-Lv-suk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="m1F-tE-oVC"/>
+                            <constraint firstItem="gmF-nl-FQ0" firstAttribute="top" secondItem="zM9-Lv-suk" secondAttribute="bottom" constant="54" id="r8X-u5-jQg"/>
+                            <constraint firstItem="zM9-Lv-suk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="zzB-02-C3q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="txtField2" destination="zM9-Lv-suk" id="mE3-JS-t1d"/>
+                        <outlet property="viewSelect" destination="gmF-nl-FQ0" id="pg2-fJ-qwC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383" y="119"/>
+            <point key="canvasLocation" x="-700" y="127.90178571428571"/>
         </scene>
     </scenes>
 </document>

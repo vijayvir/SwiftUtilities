@@ -18,6 +18,7 @@ import UIKit
 
 import Foundation
 //https://medium.com/ios-os-x-development/handling-empty-optional-strings-in-swift-ba77ef627d74
+// MARK: String
 extension Optional where Wrapped == String {
     func leoSafe(defaultValue : String? = "") -> String {
         
@@ -28,6 +29,7 @@ extension Optional where Wrapped == String {
         return strongSelf.isEmpty ? defaultValue! : strongSelf
     }
 }
+// MARK: Int
 extension Optional where Wrapped == Int {
     
     func leoSafe(defaultValue : Int? = 0 ) -> Int {
@@ -42,7 +44,7 @@ extension Optional where Wrapped == Int {
 
 
 
-
+// MARK: BOOL
 extension Optional where Wrapped == Bool {
     
     func leoSafe(defaultValue : Bool? = false ) -> Bool {
@@ -54,6 +56,19 @@ extension Optional where Wrapped == Bool {
         return strongSelf
     }
 }
+// MARK: Date
+extension Optional where Wrapped == Date {
+    
+    func leoSafe(defaultValue : Date? = Date() ) -> Date {
+        
+        guard let strongSelf = self else {
+            return defaultValue!
+        }
+        
+        return strongSelf
+    }
+}
+
 
 extension Int {
     var leoString : String {
@@ -87,6 +102,9 @@ extension String {
 //        return strongSelf
 //    }
 //}
+
+// MARK: Array<Dictionary<String, Any>>
+
 extension Optional  where Wrapped == Array<Dictionary<String, Any>>{
     func leoSafe (defaultValue : Array<Dictionary<String, Any>>? = [] ) -> Array<Dictionary<String, Any>> {
         guard let strongSelf = self else {
@@ -95,7 +113,7 @@ extension Optional  where Wrapped == Array<Dictionary<String, Any>>{
         return strongSelf
     }
 }
-
+// MARK: Array<String>
 extension Optional  where Wrapped == Array<String>{
     func leoSafe (defaultValue : Array<String>? = [] ) -> Array<String> {
         guard let strongSelf = self else {
@@ -104,6 +122,7 @@ extension Optional  where Wrapped == Array<String>{
         return strongSelf
     }
 }
+// MARK:  Array<Int>
 extension Optional  where Wrapped == Array<Int>{
     func leoSafe (defaultValue : Array<Int>? = [] ) -> Array<Int> {
         guard let strongSelf = self else {
@@ -112,6 +131,8 @@ extension Optional  where Wrapped == Array<Int>{
         return strongSelf
     }
 }
+
+// MARK:  Array<Bool>
 extension Optional  where Wrapped == Array<Bool>{
     func leoSafe (defaultValue : Array<Bool>? = [] ) -> Array<Bool> {
         guard let strongSelf = self else {
@@ -120,6 +141,8 @@ extension Optional  where Wrapped == Array<Bool>{
         return strongSelf
     }
 }
+
+// MARK:  Array<Float>
 extension Optional  where Wrapped == Array<Float>{
     func leoSafe (defaultValue : Array<Float>? = [] ) -> Array<Float> {
         guard let strongSelf = self else {
@@ -128,6 +151,7 @@ extension Optional  where Wrapped == Array<Float>{
         return strongSelf
     }
 }
+// MARK:  Array<Double>
 extension Optional  where Wrapped == Array<Double>{
     func leoSafe (defaultValue : Array<Double>? = [] ) -> Array<Double> {
         guard let strongSelf = self else {
@@ -136,6 +160,7 @@ extension Optional  where Wrapped == Array<Double>{
         return strongSelf
     }
 }
+// MARK:  Array<Any>
 extension Optional  where Wrapped == Array<Any>{
     func leoSafe (defaultValue : Array<Any>? = [] ) -> Array<Any> {
         guard let strongSelf = self else {
