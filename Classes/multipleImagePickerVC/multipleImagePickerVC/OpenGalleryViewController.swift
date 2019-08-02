@@ -51,7 +51,7 @@ class OpenGalleryViewController: UIViewController{
             self.closer = images
             self.collectionOfSeletedPhotos.reloadData()
             
-        }.withSigleSelection(active: true)
+        }
         
        if  self.navigationController != nil {
       self.navigationController?.pushViewController(osme, animated: true)
@@ -64,19 +64,7 @@ class OpenGalleryViewController: UIViewController{
         
      
         
-        
-        //
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//
-//        vc.closureGotImages = { (images) in
-//
-//            print("Images Count : \(images.count)")
-//            self.closer = images
-//            self.collectionOfSeletedPhotos.reloadData()
-//        }
-//
-//        self.navigationController?.pushViewController(vc, animated: true)
-        
+
     }
     
 

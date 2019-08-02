@@ -251,15 +251,25 @@ extension UIApplication {
 //MARK :  UIView Functionality
 class LeoPhotoLibraryViewController : UIViewController {
     var images : [LeoPhotoLibrary.Images] = []
-    private  var isSingleSelect : Bool = true
-    private var closureDone : (([UIImage])-> Void)?
+    private  var isSingleSelect : Bool = false
+
     private   var height: CGFloat  =   64
-    
+    private var  closureDone : (([UIImage])-> Void)?
+    private var closureClear : (()-> Void)?
      @discardableResult
-    func  withSigleSelection( active : Bool = false )->LeoPhotoLibraryViewController{
+    func  withIsSigleSelection( _ active : Bool = true )->LeoPhotoLibraryViewController{
         self.isSingleSelect = active
             return self
     }
+    
+    @discardableResult
+    func withTapOnClear(_ value : @escaping (()-> Void) ) ->LeoPhotoLibraryViewController{
+        closureClear = value
+        
+        return self
+        
+    }
+    
     
     @discardableResult
     func withSelectedImages(_ value : @escaping (([UIImage])-> Void) ) ->LeoPhotoLibraryViewController{
@@ -277,7 +287,13 @@ class LeoPhotoLibraryViewController : UIViewController {
         self.view.backgroundColor = .white
      
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.view.bounds.width/3.5, height: self.view.bounds.width/3.5)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+                 layout.itemSize = CGSize(width: self.view.bounds.width/6.5, height: self.view.bounds.width/6.5)
+        }else {
+                 layout.itemSize = CGSize(width: self.view.bounds.width/3.5, height: self.view.bounds.width/3.5)
+        }
+  
         layout.minimumLineSpacing = 2
         layout.minimumInteritemSpacing = 2
         self.collectionView = UICollectionView(frame: CGRect(x: 0,
@@ -409,6 +425,8 @@ class LeoPhotoLibraryViewController : UIViewController {
             image.isSelected = false
         }
         collectionView.reloadData()
+        closureClear?()
+        
     }
 
 }
@@ -462,7 +480,16 @@ class LeoPhotoLibraryCollectionViewCell : UICollectionViewCell{
         if imageView == nil {
             imageView =  UIImageView(frame: CGRect(x: 0, y: 0, width: self.contentView.bounds.width  - 10, height: self.contentView.bounds.height - 10))
            // imageView?.contentMode = .scaleAspectFit
-           
+            imageView?.layer.cornerRadius = 10
+            imageView?.clipsToBounds = true
+            
+            imageView?.layer.borderWidth = 0.50
+            imageView?.layer.borderColor = UIColor.black.cgColor
+            
+           // self.backgroundView?.layer.cornerRadius = 10
+           // self.backgroundView?.clipsToBounds = true
+            
+           // self.contentView.layer.cornerRadius = 10
             imageView?.center =  self.contentView.center
             imageView?.backgroundColor = .white
             imageView?.image = element.image
@@ -479,6 +506,7 @@ class LeoPhotoLibraryCollectionViewCell : UICollectionViewCell{
                 self.backgroundColor = .white
             }
             
+            
             self.contentView.addSubview(btnTap!)
             
             
@@ -490,7 +518,7 @@ class LeoPhotoLibraryCollectionViewCell : UICollectionViewCell{
             
             if self.element!.isSelected {
                 
-                self.backgroundColor = .blue
+                self.backgroundColor = self.tintColor
             }else {
                 self.backgroundColor = .white
             }
@@ -508,7 +536,7 @@ class LeoPhotoLibraryCollectionViewCell : UICollectionViewCell{
         
         if self.element!.isSelected {
       
-               self.backgroundColor = .blue
+               self.backgroundColor = self.tintColor
         }else {
                self.backgroundColor = .white
         }
