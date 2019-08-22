@@ -19,6 +19,32 @@ import UIKit
 import Foundation
 //https://medium.com/ios-os-x-development/handling-empty-optional-strings-in-swift-ba77ef627d74
 // MARK: String
+extension String {
+    var leoLog : String {
+        
+        #if DEBUG
+        Swift.print(self)
+        #else
+        
+        #endif
+        
+        
+        
+        
+        return self
+    }
+}
+extension Dictionary   where Key: ExpressibleByStringLiteral, Value: Any  {
+    var leoLog : [String  : Any] {
+        #if DEBUG
+        Swift.print(self)
+        #else
+        #endif
+        return self as! [String : Any]
+    }
+}
+
+
 extension Optional where Wrapped == String {
     func leoSafe(defaultValue : String? = "") -> String {
         

@@ -76,7 +76,7 @@ extension LeoSerializable {
                     case .class:
                         representation[variableName] =  LeoDiscription(object: value)
                     case .enum:
-                        print("enum")
+                      representation[variableName] =  LeoDiscription(object: value)
                     case .tuple:
                         print("tuple")
                     case .optional:

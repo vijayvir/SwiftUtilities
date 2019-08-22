@@ -10,6 +10,14 @@
 //<key>NSLocationWhenInUseUsageDescription</key>
 //<string>Location always usage description</string>
 
+
+
+/*
+ <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+ <string>Location always and when in usage description</string>
+ <key>NSLocationWhenInUseUsageDescription</key>
+ <string>Location always usage description</string>
+*/
 import UIKit
 import CoreLocation
 import MapKit

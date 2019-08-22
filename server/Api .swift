@@ -1,40 +1,40 @@
 import Foundation
 
-let baseUrl  = "http://localhost:8080/"
+let baseUrl  = "http://localhost:4015/"
 
 extension Api {
     func baseURl() -> String {
         return baseUrl + self.rawValued()
     }
 }
-enum Api{
-    case userSignup
-    case userLogin
-    case userReferenceSearch
-    case userAddReferenceNumber
-    case addSurveyDetails
+
+enum Api  {
+    case login(username : String , password : String )
+    case signup(first_name: String ,last_name : String ,age : String ,date: String ,
+        username : String ,password : String ,sex : String ,device_type : String ,device_token : String   )
+    case update_userInfo(user_id : String , first_name : String , last_name : String , description : String ,   intrest : String    )
     
-    case none
+    case profileImage( user_id: String)
+    
+    case nilValue ( valueHave : String , someNil : String?
+    )
+    
+    case getME
     func rawValued() -> String {
         switch self {
+        case .login:
+            return "login"
+        case .signup:
+            return "signup"
+        case .getME:
+            return "get"
+        case .update_userInfo :
+            return "update_userInfo"
+        case .nilValue:
+            return "dfsw"
+        case .profileImage:
+            return "profileImage"
             
-        case .userLogin:
-            return "userLogin"
-            
-        case .userSignup:
-            return "userSignup"
-            
-        case .userReferenceSearch:
-            return "userReferenceSearch"
-            
-        case .userAddReferenceNumber:
-            return "userAddReferenceNumber"
-            
-        case .addSurveyDetails :
-            return "addSurveyDetails"
-            
-        default:
-            return "user_registration"
         }
     }
 }

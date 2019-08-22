@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LeoImagePagerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqL-yV-qC4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-Pq-1fH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afg-rX-uM9">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfr-SV-8OX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="239.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PR-KM-u2e" customClass="LeoImagePagerView" customModule="LeoImagePagerDemo" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="239.5"/>
+                                                                <color key="backgroundColor" red="0.014712193050000001" green="0.86569094660000001" blue="0.99802941079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isTimerEnable" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="seconds">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="contentMode0_12">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isPager" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addPager" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="currentDotColor">
+                                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="dotColor">
+                                                                        <color key="value" red="0.9148445725440979" green="0.33663827180862427" blue="0.90431803464889526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.95686274510000002" green="0.75686274509999996" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="239.5" id="GD0-1c-x3K"/>
+                                                            <constraint firstAttribute="bottom" secondItem="5PR-KM-u2e" secondAttribute="bottom" id="LBf-RC-CM4"/>
+                                                            <constraint firstItem="5PR-KM-u2e" firstAttribute="top" secondItem="Yfr-SV-8OX" secondAttribute="top" id="YWw-Xv-AXD"/>
+                                                            <constraint firstItem="5PR-KM-u2e" firstAttribute="leading" secondItem="Yfr-SV-8OX" secondAttribute="leading" id="fmY-sH-iXC"/>
+                                                            <constraint firstAttribute="trailing" secondItem="5PR-KM-u2e" secondAttribute="trailing" id="zjP-aJ-ESq"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0s-Yb-icA" customClass="LeoVerticalLabelView" customModule="LeoImagePagerDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="239.5" width="60" height="250"/>
+                                                        <color key="backgroundColor" red="0.119932346" green="0.58538347479999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="wTF-0X-Lt6"/>
+                                                            <constraint firstAttribute="height" constant="250" id="wuV-R1-Ntn"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clockWise" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textAlignment0_4">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                <color key="value" red="0.90734231470000004" green="0.01405399758" blue="0.013268392530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="C0s-Yb-icA" firstAttribute="top" secondItem="Yfr-SV-8OX" secondAttribute="bottom" id="5DC-PE-cvO"/>
+                                                    <constraint firstItem="Yfr-SV-8OX" firstAttribute="leading" secondItem="afg-rX-uM9" secondAttribute="leading" id="9bH-fY-HQb"/>
+                                                    <constraint firstItem="Yfr-SV-8OX" firstAttribute="top" secondItem="afg-rX-uM9" secondAttribute="top" id="Jnr-F1-VxZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Yfr-SV-8OX" secondAttribute="trailing" id="M2z-Da-aDk"/>
+                                                    <constraint firstItem="C0s-Yb-icA" firstAttribute="leading" secondItem="afg-rX-uM9" secondAttribute="leading" id="qh9-0c-Qw7"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="afg-rX-uM9" firstAttribute="leading" secondItem="hLJ-Pq-1fH" secondAttribute="leading" id="Hid-la-pJ6"/>
+                                            <constraint firstAttribute="trailing" secondItem="afg-rX-uM9" secondAttribute="trailing" id="Naf-GO-JtE"/>
+                                            <constraint firstItem="afg-rX-uM9" firstAttribute="top" secondItem="hLJ-Pq-1fH" secondAttribute="top" id="l8V-uQ-7be"/>
+                                            <constraint firstAttribute="bottom" secondItem="afg-rX-uM9" secondAttribute="bottom" id="rec-pS-xuW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hLJ-Pq-1fH" secondAttribute="bottom" id="4jP-KC-akJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="hLJ-Pq-1fH" secondAttribute="trailing" id="9pj-W9-Yle"/>
+                                    <constraint firstItem="hLJ-Pq-1fH" firstAttribute="top" secondItem="qqL-yV-qC4" secondAttribute="top" id="a8B-ME-6Kf"/>
+                                    <constraint firstItem="hLJ-Pq-1fH" firstAttribute="leading" secondItem="qqL-yV-qC4" secondAttribute="leading" id="fwZ-Mo-6KB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qqL-yV-qC4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="76n-CK-eEy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qqL-yV-qC4" secondAttribute="bottom" id="VeS-bC-NYi"/>
+                            <constraint firstItem="qqL-yV-qC4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hLL-G1-ftG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qqL-yV-qC4" secondAttribute="trailing" id="rZh-We-hdE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewPager" destination="5PR-KM-u2e" id="qbk-zr-K8l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417" y="-52"/>
+        </scene>
+    </scenes>
+</document>

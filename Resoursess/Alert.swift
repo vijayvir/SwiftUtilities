@@ -10,12 +10,20 @@ import UIKit
 
 
 let appNameAlert = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-
+extension String  {
+    
+    func leoSimpleAlert( completionHandler: (() -> Swift.Void)? = nil) {
+        Alert.showSimple(self) {
+            completionHandler?()
+        }
+    }
+    
+}
 
 class Alert: UIAlertController {
     class func showSimple(_ message: String, completionHandler: (() -> Swift.Void)? = nil) {
         let keywindow = UIApplication.shared.keyWindow
-       // let mainController = keywindow?.rootViewController
+        // let mainController = keywindow?.rootViewController
         let alert = UIAlertController(title: appNameAlert, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_: UIAlertAction!) in
             print("Heloo ")
@@ -29,10 +37,10 @@ class Alert: UIAlertController {
     // make sure you have navigation  view controller
     
     class func showComplex(title: String? = "",
-                         message: String,
-                         preferredStyle: UIAlertController.Style? = .alert,
-                         cancelTilte: String,
-                         otherButtons: String ...,
+                           message: String,
+                           preferredStyle: UIAlertController.Style? = .alert,
+                           cancelTilte: String,
+                           otherButtons: String ...,
         comletionHandler: ((Swift.Int) -> Swift.Void)? = nil) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle!)

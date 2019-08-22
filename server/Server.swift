@@ -70,7 +70,41 @@ extension Array {
     
 }
 
-
+extension Api {
+    
+    func log() {
+        
+        #if DEBUG
+        _ = "🛫🛫🛫🛫🛫Api: ".leoLog + self.rawValued().leoLog
+        _ =  self.request().leoLog
+        #else
+        
+        #endif
+        
+        
+    }
+    
+}
+extension Api {
+    func request() -> [String  : Any] {
+        
+        var dict : [String : Any] = [ : ]
+        
+        for case let (_?, variableValue) in Mirror(reflecting: self).children {
+            
+            for case let (variableName1?, variableValue1) in Mirror(reflecting: variableValue).children {
+                dict[variableName1] = variableValue1
+                
+            }
+        }
+        
+        
+        
+        return dict
+        
+    }
+    
+}
 
 
 extension String: ParameterEncoding {
@@ -89,7 +123,7 @@ extension Data: ParameterEncoding {
     }
     
 }
-class WebServices {
+class LeoRoute {
     
     enum ContentType : String {
         case applicationJson = "application/json"
@@ -108,7 +142,7 @@ class WebServices {
         var headers : HTTPHeaders = [
             "Content-Type": contentType!.rawValue,
             "cache-control": "no-cache",
-            ]
+        ]
         
         if authorization != nil {
             if let authorization1 = authorization {
@@ -138,7 +172,7 @@ class WebServices {
         
         let configuration = URLSessionConfiguration.background(withIdentifier: "com.fittingroom.newtimezone.Fitzz")
         configuration.timeoutIntervalForRequest = 60 * 60 * 00
-        WebServices.manager = Alamofire.SessionManager(configuration: configuration)
+        LeoRoute.manager = Alamofire.SessionManager(configuration: configuration)
         
         var encodeSting : ParameterEncoding = somString
         
@@ -192,7 +226,82 @@ class WebServices {
     }
     
     
+    class func post( api : Api ,
+                     method : HTTPMethod? = .post ,
+                     completionHandler: CompletionBlock? = nil,
+                     failureHandler: FailureBlock? = nil ) {
+        
+        api.log()
+        
+        
+        let urlString = api.baseURl()
+        
+        let parameters: Parameters = api.request()
+        
+        Alamofire.request(urlString, method: method!, parameters: parameters)
+            
+            .responseJSON {  response in
+                switch (response.result) {
+                    
+                case .success(let value):
+                    completionHandler!(value as! [String : Any] )
+                    
+                case .failure(let error):
+                    print(error)
+                    failureHandler?([:] )
+                }
+            }
+            .responseString { _ in
+                
+            }
+            
+            .responseData { response in
+                if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)")
+                }
+        }
+        
+        
+    }
     
+    class func uploadSingle(  api : Api , image:UIImage , completionHandler: CompletionBlock? = nil, failureHandler: FailureBlock? = nil) {
+        
+        let urlString = api.baseURl()
+        let parameters: Parameters = api.request()
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            let data = image.jpegData(compressionQuality: 1)
+            multipartFormData.append(data!, withName: "upload_image", fileName: "\(NSUUID().uuidString).jpeg", mimeType: "image/jpeg")
+            
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
+            }
+            
+        },
+                         to: urlString) { result  in
+                            switch result {
+                            case .success(let upload, _, _):
+                                
+                                upload.uploadProgress(closure: { _ in
+                                    // Print progress
+                                    
+                                })
+                                upload.responseJSON { response in
+                                    switch (response.result) {
+                                    case .success(let value):
+                                        completionHandler!(value as! [String : Any] )
+                                    case .failure(let error):
+                                        print(error)
+                                        failureHandler?([:] )
+                                    }
+                                    
+                                }
+                                
+                            case .failure(let encodingError):
+                                print(encodingError)
+                            }
+                            
+        }
+    }
     
     
     
@@ -202,26 +311,33 @@ class WebServices {
                      failureHandler: FailureBlock? = nil ) {
         let urlString = url.baseURl()
         
-        print(urlString)
         let parameters: Parameters = jsonObject
+        
         Alamofire.request(urlString, method: method!, parameters: parameters)
-            .responseJSON {
-                response in
+            
+            .responseJSON {  response in
                 switch (response.result) {
+                    
                 case .success(let value):
                     completionHandler!(value as! [String : Any] )
+                    
                 case .failure(let error):
                     print(error)
                     failureHandler?([:] )
                 }
             }
+            
             .responseString { _ in
+                
             }
+            
             .responseData { response in
                 if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
                     print("Data: \(utf8Text)")
                 }
         }
+        
+        
     }
     
     class func uploadSingle( url : Api,jsonObject: [String : Any] , profiePic:UIImage , completionHandler: CompletionBlock? = nil, failureHandler: FailureBlock? = nil) {
@@ -273,8 +389,8 @@ class WebServices {
         let parameters: Parameters = jsonObject
         let configuration = URLSessionConfiguration.background(withIdentifier: "com.fittingroom.newtimezone.Fitzz")
         configuration.timeoutIntervalForRequest = 60 * 60 * 00
-        WebServices.manager = Alamofire.SessionManager(configuration: configuration)
-        WebServices.manager.upload(multipartFormData: { multipartFormData in
+        LeoRoute.manager = Alamofire.SessionManager(configuration: configuration)
+        LeoRoute.manager.upload(multipartFormData: { multipartFormData in
             
             for (key, value) in parameters {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
@@ -327,7 +443,7 @@ class WebServices {
             
             
         },
-                                   to: urlString) { result  in
+                                to: urlString) { result  in
                                     switch result {
                                     case .success(let upload, _, _):
                                         
