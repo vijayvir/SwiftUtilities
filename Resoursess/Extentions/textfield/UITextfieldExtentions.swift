@@ -33,7 +33,18 @@ extension UITextField{
     }
 }
 
+extension UITextView {
+    
+    func lenght() -> Bool {
+        if self.text.leoSafe().count <= 0 {
+            return false
+        }
+        return true
+    }
+    
+}
 extension UITextField {
+    
     func isValidEmailAddress() -> Bool {
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
@@ -57,6 +68,7 @@ extension UITextField {
         }
         return true
     }
+    
     
 }
 fileprivate var leoTextfieldClosureKey: UInt8 = 0
