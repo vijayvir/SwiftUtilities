@@ -30,3 +30,20 @@ public extension Sequence {
 		return dict
 	}
 }
+/*
+  var array = ["John", "Snow", "George", "John", "Bush", "George"].unique()
+ */
+
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var seen: [Iterator.Element: Bool] = [:]
+        
+        let some =  self.filter { element in
+            print(element, ":  ",seen)
+            return seen.updateValue(true, forKey: element) == nil
+            
+        }
+        
+        return  some
+    }
+}

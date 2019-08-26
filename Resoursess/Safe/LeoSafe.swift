@@ -68,7 +68,17 @@ extension Optional where Wrapped == Int {
     }
 }
 
-
+extension Optional where Wrapped == Double {
+    
+    func leoSafe(defaultValue : Double? = 0 ) -> Double {
+        
+        guard let strongSelf = self else {
+            return defaultValue!
+        }
+        
+        return strongSelf
+    }
+}
 
 // MARK: BOOL
 extension Optional where Wrapped == Bool {
