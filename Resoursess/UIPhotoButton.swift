@@ -35,7 +35,7 @@ let appNameUIPhotosButton = Bundle.main.infoDictionary![kCFBundleNameKey as Stri
 
 let rootFolder: String = "\(NSTemporaryDirectory())UIMultiplePhoto/"
 
-class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class LeoUIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Outlets
     
@@ -47,12 +47,13 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     
     @IBInspectable var isSingle: Bool = true
     
+    @IBInspectable var isAlertStyle: Bool = true
+    
+    @IBInspectable var  isGallery : Bool = true
     // Use this class to have multiple images .
     
     public var closureDidFinishPicking: ((_ images: [String]) -> Void)?
-    
     // Use this class to have single image.
-    
     public  var closureDidFinishPickingAnImage: ((_ image: [String]) -> Void)?
     
     public  var closureDidFinishPickingAnUIImage: ((_ image: UIImage) -> Void)?
@@ -64,11 +65,15 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     // MARK: CLC
     
     @IBOutlet weak var viewcontoller :  UIViewController?
+    
+    
+    
+    
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
         
-        print(UIPhotosButton.photoPath(), NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String, rootFolder)
+        print(LeoUIPhotosButton.photoPath(), NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String, rootFolder)
         
         self.addTarget(self, action: #selector(addPhoto),
                        for: .touchUpInside)
@@ -110,40 +115,64 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     @objc private func addPhoto() {
+        
+        
         imagePaths.removeAll()
         
         self.closureDidTap?()
-        var style : UIAlertController.Style = .actionSheet
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            style = .alert
-        }
         
-        PhotoAlertHelper.alertView(title: appNameUIPhotosButton,
-                                   message: "Select image.",
-                                   preferredStyle: style,
-                                   cancelTilte: "Cancel",
-                                   otherButtons: "Camera", "Gallery",
-                                   comletionHandler: { (index: Swift.Int) in
-                                    
-                                    print(index)
-                                    
-                                    if index == 0 {
+        
+        if isAlertStyle {
+            var style : UIAlertController.Style = .actionSheet
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                style = .alert
+            }
+            
+            PhotoAlertHelper.alertView(title: appNameUIPhotosButton,
+                                       message: "Select image.",
+                                       preferredStyle: style,
+                                       cancelTilte: "Cancel",
+                                       otherButtons: "Camera", "Gallery",
+                                       comletionHandler: { (index: Swift.Int) in
                                         
-                                        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-                                            self.camera()
+                                        print(index)
+                                        
+                                        if index == 0 {
                                             
-                                        } else {
+                                            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                                                self.camera()
+                                                
+                                            } else {
+                                                self.gallery()
+                                                
+                                            }
+                                            
+                                        } else if index == 1 {
                                             self.gallery()
-                                            
+                                        } else if index == 2 {
+                                            self.closureDidTapCancel?()
                                         }
                                         
-                                    } else if index == 1 {
-                                        self.gallery()
-                                    } else if index == 2 {
-                                        self.closureDidTapCancel?()
-                                    }
-                                    
-        })
+            })
+        } else {
+            
+            
+            if !isGallery {
+                
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                    self.camera()
+                    
+                } else {
+                    self.gallery()
+                    
+                }
+                
+            }else {
+                self.gallery()
+            }
+        }
+        
+        
         
     }
     
@@ -156,9 +185,9 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
         
         imagePicker.sourceType = .photoLibrary
         
-        let keywindow = UIApplication.shared.keyWindow
+        // let keywindow = UIApplication.shared.keyWindow
         
-        let mainController = keywindow?.rootViewController
+        //  let mainController = keywindow?.rootViewController
         
         viewcontoller?.present(imagePicker, animated: true, completion: nil)
     }
@@ -172,19 +201,55 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
         
         imagePicker.sourceType = .camera
         
-        let keywindow = UIApplication.shared.keyWindow
+        //  let keywindow = UIApplication.shared.keyWindow
         
-        let mainController = keywindow?.rootViewController
+        // let mainController = keywindow?.rootViewController
         
         viewcontoller?.present(imagePicker, animated: true, completion: nil)
     }
     
-    // MARK: ImagePicker view Delegate
     
+}
+extension LeoUIPhotosButton {
+    
+    @discardableResult
+    func withClosureDidTap(_ value : @escaping (() -> Void))-> LeoUIPhotosButton {
+        closureDidTapCancel = value
+        return self
+    }
+    @discardableResult
+    func withClosureDidTapCancel(_ value : @escaping (() -> Void))-> LeoUIPhotosButton {
+        closureDidTapCancel = value
+        return self
+    }
+    @discardableResult
+    func withClosureDidFinishPickingAnUIImage(_ value : @escaping ((_ image: UIImage) -> Void))-> LeoUIPhotosButton {
+        closureDidFinishPickingAnUIImage = value
+        return self
+    }
+    
+    @discardableResult
+    func withClosureDidFinishPickingAnImage(_ value : @escaping ((_ image: [String]) -> Void))-> LeoUIPhotosButton {
+        closureDidFinishPickingAnImage = value
+        return self
+    }
+    
+    @discardableResult
+    func withClosureDidFinishPicking(_ value : @escaping ((_ images: [String]) -> Void) )-> LeoUIPhotosButton {
+        closureDidFinishPicking = value
+        return self
+    }
+    
+    
+}
+
+extension LeoUIPhotosButton {
+    
+    // MARK: ImagePicker view Delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
-        let filePath = URL(fileURLWithPath: UIPhotosButton.photoPath() + "\(NSUUID().uuidString)").appendingPathExtension("jpg")
+        let filePath = URL(fileURLWithPath: LeoUIPhotosButton.photoPath() + "\(NSUUID().uuidString)").appendingPathExtension("jpg")
         
         imagePaths.append(filePath.path)
         
@@ -242,6 +307,7 @@ class UIPhotosButton: UIButton, UIImagePickerControllerDelegate, UINavigationCon
             self.closureDidFinishPicking?(self.imagePaths)
         })
     }
+    
 }
 class PhotoAlertHelper: UIAlertController {
     // make sure you have navigation  view controller

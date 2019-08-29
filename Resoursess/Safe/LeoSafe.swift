@@ -206,6 +206,16 @@ extension Optional  where Wrapped == Array<Any>{
     }
 }
 
+extension Optional  {
+    func leoNil(_ callback : ((Wrapped)-> Void)? = nil  ) {
+        if self != nil {
+            callback?(self!)
+        }
+    }
+    
+}
+
+
 //extension Optional  where Wrapped == Sequence {
 //    func leoSafe <T> (defaultValue : [T]? = [] ) -> [T] {
 //        guard let strongSelf = self else {
