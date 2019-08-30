@@ -9,13 +9,54 @@
 import Foundation
 import UIKit
 // https://medium.com/monstar-lab-bangladesh-engineering/step-into-swift-combine-c0c6daaa3f6e
-@objc  protocol  LeoCollectionViewDataSourceable  {
+
+@objc  protocol  LeoTypeCastable  {
     
+}
+
+extension  LeoTypeCastable {
+    @discardableResult
+    func leoGet<T:LeoTypeCastable>( type  me : T.Type ) -> T?   {
+        return self as? T ??  nil
+        
+    }
+}
+
+@objc  protocol  LeoCollectionViewDataSourceable :class, LeoTypeCastable {
+    
+}
+
+
+
+
+
+// MARK: CollectionVirew
+
+class LeoCollectionViewCell : UICollectionViewCell{
+    
+    
+    var element : LeoCollectionViewDataSourceable?
+    private var closureElememt : ((LeoCollectionViewDataSourceable)-> Void)?
+    
+    @discardableResult
+    func configure(element : LeoCollectionViewDataSourceable) -> Self {
+        self.element = element
+        return self
+    }
+    @discardableResult
+    func withTap(callback : @escaping ((LeoCollectionViewDataSourceable)-> Void))-> Self {
+        closureElememt = callback
+        
+        return self
+    }
+    @IBAction func actionTap(_ sender: UIButton?) {
+        closureElememt?(element!)
+    }
 }
 
 class LeoCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    private var elements : [LeoCollectionViewDataSourceable] = []
+    var elements : [LeoCollectionViewDataSourceable] = []
     
     var closureCellForIndexPath : ((_ collectionView: UICollectionView, _ indexPath: IndexPath , _ element : LeoCollectionViewDataSourceable  ) -> UICollectionViewCell)?
     
