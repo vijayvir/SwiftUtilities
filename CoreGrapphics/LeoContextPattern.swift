@@ -65,7 +65,7 @@ class LeoContextPattern: UIView {
         context.saveGState()
         context.setBlendMode(.screen)
         
-      CAShapeLayer()
+    
    
         
         context.addArc(

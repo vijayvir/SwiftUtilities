@@ -41,6 +41,7 @@ class LeoRadioBox: UIButton {
                     startAngle: CGFloat(0 * Double.pi / 180),
                     endAngle: CGFloat(360 * Double.pi / 180),
                     clockwise: true)
+        
         let context = UIGraphicsGetCurrentContext()
         context?.saveGState()
         context?.addPath(outerPath.cgPath)
