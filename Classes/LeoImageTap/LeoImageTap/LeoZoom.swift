@@ -25,37 +25,40 @@ class LeoZoomViewController : UIViewController {
         self.tintColor = tintColor
         self.closureDidTapOnCross = closureDidTapOnCross
     }
-    
+    var scrollImg: UIScrollView?
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.view.backgroundColor = .white
+        self.view.backgroundColor = .white
         
         
-     
-        let scrollImg: UIScrollView = UIScrollView(frame: self.view.bounds)
-        scrollImg.delegate = self
-        scrollImg.backgroundColor = UIColor(red: 90, green: 90, blue: 90, alpha: 0.90)
-        scrollImg.alwaysBounceVertical = false
-        scrollImg.alwaysBounceHorizontal = false
-        scrollImg.showsVerticalScrollIndicator = true
-        scrollImg.flashScrollIndicators()
-       // scrollImg.backgroundColor = .red
-        scrollImg.minimumZoomScale = 0.10
-        scrollImg.maximumZoomScale = 100.0
-     
-     
         
-        self.view.addSubview(scrollImg)
+        scrollImg = UIScrollView(frame: self.view.bounds)
+        
+        scrollImg?.delegate = self
+        scrollImg?.backgroundColor = UIColor(red: 90, green: 90, blue: 90, alpha: 0.90)
+        scrollImg?.alwaysBounceVertical = false
+        scrollImg?.alwaysBounceHorizontal = false
+        scrollImg?.showsVerticalScrollIndicator = true
+        scrollImg?.flashScrollIndicators()
+        // scrollImg.backgroundColor = .red
+        scrollImg?.minimumZoomScale = 0.10
+        scrollImg?.maximumZoomScale = 100.0
         
         
-        imageView = UIImageView(frame:scrollImg.bounds)
-        imageView.image = image
-        imageView.contentMode = .scaleAspectFit
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        scrollImg?.addGestureRecognizer(tap)
         
-        imageView!.layer.cornerRadius = 11.0
-        imageView!.clipsToBounds = false
-        scrollImg.addSubview(imageView!)
-        
+        if scrollImg != nil {
+            self.view.addSubview(scrollImg!)
+            imageView = UIImageView(frame:scrollImg!.bounds)
+            imageView.image = image
+            imageView.contentMode = .scaleAspectFit
+            
+            imageView!.layer.cornerRadius = 11.0
+            imageView!.clipsToBounds = false
+            scrollImg?.addSubview(imageView!)
+            
+        }
         
         
         let button: UIButton = UIButton(type: .system)
@@ -69,9 +72,22 @@ class LeoZoomViewController : UIViewController {
         button.setImage(LeoZoomButtons.imageOfCross, for: .normal)
         button.addTarget(self, action: #selector(self.actionCross), for: .touchUpInside)
     }
-    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        
+        if scrollImg != nil {
+            if scrollImg!.zoomScale != 1 {
+                
+                scrollImg?.setZoomScale(1, animated: true)
+            }else   if scrollImg!.zoomScale == 1 {
+                
+                scrollImg?.setZoomScale(2, animated: true)
+            }
+            
+        }
+        
+    }
     @objc func actionCross(sender: AnyObject) {
-           closureDidTapOnCross?()
+        closureDidTapOnCross?()
         self.dismiss(animated: true) {
             
         }
@@ -81,7 +97,7 @@ class LeoZoomViewController : UIViewController {
         super.viewDidAppear(true)
     }
     
- 
+    
     
 }
 
@@ -103,7 +119,7 @@ extension LeoZoomViewController : UIScrollViewDelegate{
         subView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX, y: scrollView.contentSize.height * 0.5 + offsetY)
     }
     
-  
+    
 }
 
 private var LZAssociatedObjectHandle: UInt8 = 25
@@ -219,18 +235,18 @@ extension UIImageView   {
             let vc = LeoZoomViewController()
             vc.configure(image: self.image,
                          tintColor: tintColor){
-                closureDidTapOnCross?()
-                
+                            closureDidTapOnCross?()
+                            
             }
             UIApplication.leoZoomtopViewController()?.present(vc, animated: true)
-           
-       
+            
+            
         }
-
+        
         
     }
-  
-   
+    
+    
     
 }
 extension UIApplication {

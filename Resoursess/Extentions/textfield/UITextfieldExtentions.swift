@@ -68,6 +68,9 @@ extension UITextField {
         }
         return true
     }
+    func leoLength(_ lenght : Int = 8) ->  Bool{
+        return self.text.leoSafe().count < lenght
+    }
     
     
 }
@@ -130,4 +133,47 @@ extension UITextField {
         
         
     }
+}
+class LeoTextFieldDelegate: NSObject, UITextFieldDelegate {
+    
+    private var   closureShouldChangeCharactersIn : ((_ textField: UITextField,  _ string: String , _ range : NSRange  ) -> Bool)?
+    
+    //http://eon.codes/blog/2016/07/04/Dynamic-method-call/
+    @discardableResult
+    func withShouldChangeCharactersIn(cell:@escaping ((_ textField: UITextField,  _ string: String , _ range : NSRange  ) -> Bool) ) -> LeoTextFieldDelegate {
+        closureShouldChangeCharactersIn = cell
+        return self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        return closureShouldChangeCharactersIn?(textField,string,range) ?? true
+    }
+}
+class LeoTextViewDelegate: NSObject, UITextViewDelegate {
+    
+    private var   closureShouldChangeCharactersIn : ((_ textField: UITextView,  _ string: String , _ range : NSRange  ) -> Bool)?
+    
+    //http://eon.codes/blog/2016/07/04/Dynamic-method-call/
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        return closureShouldChangeCharactersIn?(textView,text,range) ?? true
+    }
+    
+    @discardableResult
+    func withShouldChangeCharactersIn(cell:@escaping ((_ textField: UITextView,  _ string: String , _ range : NSRange  ) -> Bool) ) -> LeoTextViewDelegate {
+        closureShouldChangeCharactersIn = cell
+        return self
+    }
+    
+    
+}
+
+extension UITextView{
+    
+    func leoLength(_ lenght : Int = 8) ->  Bool{
+        return self.text.leoSafe().count < lenght
+    }
+    
 }
