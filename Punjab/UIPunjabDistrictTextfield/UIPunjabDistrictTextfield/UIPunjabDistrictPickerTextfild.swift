@@ -75,9 +75,9 @@ class PunjabDistrictPickerTextField: UITextField {
 
         super.init(coder: aDecoder)
 
-			self.addTarget(self, action: #selector(PunjabDistrictPickerTextField.pickerTextFieldEditingDidBegin(_:)), for: UIControlEvents.editingDidBegin)
+        self.addTarget(self, action: #selector(PunjabDistrictPickerTextField.pickerTextFieldEditingDidBegin(_:)), for: UIControl.Event.editingDidBegin)
 
-			self.addTarget(self, action: #selector(PunjabDistrictPickerTextField.pickerTextFieldEditingDidEnd(_:)), for: UIControlEvents.editingDidEnd)
+        self.addTarget(self, action: #selector(PunjabDistrictPickerTextField.pickerTextFieldEditingDidEnd(_:)), for: UIControl.Event.editingDidEnd)
 
         addInputAccessoryView()
 
@@ -130,7 +130,7 @@ class PunjabDistrictPickerTextField: UITextField {
 
     }
 
-    func menuButtonTapped(sender _: UIBarButtonItem) {
+    @objc func menuButtonTapped(sender _: UIBarButtonItem) {
 
         if let index = pickerView.selectedRow(inComponent: 0) as Int? {
 
@@ -148,7 +148,7 @@ class PunjabDistrictPickerTextField: UITextField {
 
 extension PunjabDistrictPickerTextField {
 
-	func pickerTextFieldEditingDidBegin(_ textFieldTemp: UITextField) {
+    @objc func pickerTextFieldEditingDidBegin(_ textFieldTemp: UITextField) {
 
 		if let index = pickerView.selectedRow(inComponent: 0) as Int? {
 
@@ -167,7 +167,7 @@ extension PunjabDistrictPickerTextField {
 
 	}
 
-	func pickerTextFieldEditingDidEnd(_ textFieldTemp: UITextField) {
+    @objc func pickerTextFieldEditingDidEnd(_ textFieldTemp: UITextField) {
 
 		if let index = pickerView.selectedRow(inComponent: 0) as Int? {
 

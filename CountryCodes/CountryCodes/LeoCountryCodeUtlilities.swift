@@ -149,12 +149,12 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
     }
 
 
-    func searchButtonTapped(sender _: UIBarButtonItem) {
+    @objc func searchButtonTapped(sender _: UIBarButtonItem) {
     
         closureDidSearch?(world.countryList)
     }
     
-    func menuButtonTapped(sender _: UIBarButtonItem) {
+    @objc func menuButtonTapped(sender _: UIBarButtonItem) {
 
         if let index = pickerView.selectedRow(inComponent: 0) as Int? {
             let country: World.Country = world.countryList[index]
@@ -195,7 +195,7 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let country: World.Country = world.countryList[row]
 
-        return " \(flag(country.sortName)) \(country.name)"
+        return " \(flag(country.sortName)) \(country.name) \(row)"
 
     }
 
