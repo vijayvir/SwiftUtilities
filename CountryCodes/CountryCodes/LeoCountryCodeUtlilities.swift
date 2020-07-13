@@ -8,7 +8,7 @@ Main purpose  to provide the world codes  in text field through the Pickerview
 /* Working of the class
 
  Ist : make the outlet in class
-       	@IBOutlet weak var txtCountryCode: CountryPickerTextField!
+           @IBOutlet weak var txtCountryCode: CountryPickerTextField!
 
 2nd : use the closure or delegate in view Did load method .
 
@@ -25,7 +25,7 @@ import Foundation
 import UIKit
 
 struct World {
-	
+    
     struct Country {
 
         var id: String
@@ -56,8 +56,11 @@ struct World {
 
         for rawCountry in World.countries() {
             if let object = Country(country: rawCountry) as Country? {
-                countryList.append(object)
+                if object.code != "" {
+                    countryList.append(object)
 
+                }
+                
             }
 
         }
@@ -79,10 +82,10 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 
     var world: World = World()
 
-	
-	// Use this class to have single image.
-	
-	public  var closureDidSelectCountry: ((_ image: World.Country ) -> Void)?
+    
+    // Use this class to have single image.
+    
+    public  var closureDidSelectCountry: ((_ image: World.Country ) -> Void)?
     
     public  var closureDidSearch: ((_ lists: [ World.Country ] ) -> Void)?
     
@@ -100,13 +103,13 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
 
         pickerView.delegate = self
 
-        pickerView.selectRow(99, inComponent: 0, animated: true)
+        pickerView.selectRow(81, inComponent: 0, animated: true)
 
         if let index = pickerView.selectedRow(inComponent: 0) as Int? {
-					
+                    
             let country: World.Country = world.countryList[index]
 
-            self.text = "\(country.name)"
+            self.text = "\(country.code)"
         }
 
     }
@@ -160,8 +163,8 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
             let country: World.Country = world.countryList[index]
 
             self.text = "\(country.code)"
-					
-					 closureDidSelectCountry?(country)
+                    
+                     closureDidSelectCountry?(country)
         }
 
         _ = resignFirstResponder()
@@ -195,18 +198,18 @@ class CountryPickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let country: World.Country = world.countryList[row]
 
-        return " \(flag(country.sortName)) \(country.name) \(row)"
+        return " \(flag(country.sortName)) \(country.name)  \(country.code) \(row)"
 
     }
 
     func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
-			
+            
         let country: World.Country = world.countryList[row]
 
-        self.text = "\(country.name)"
+        self.text = "\(country.code)"
 
-			  closureDidSelectCountry?(country)
-			
+        closureDidSelectCountry?(country)
+            
     }
 
     class func phoneNumberComponets(phoneNumber: String, maxLenght: Int? = 10) -> (String, String) {
