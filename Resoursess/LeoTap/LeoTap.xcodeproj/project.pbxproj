@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45B17E4024FCFC9000C85FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B17E3F24FCFC9000C85FDE /* AppDelegate.swift */; };
+		45B17E4224FCFC9000C85FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B17E4124FCFC9000C85FDE /* SceneDelegate.swift */; };
+		45B17E4424FCFC9000C85FDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B17E4324FCFC9000C85FDE /* ViewController.swift */; };
+		45B17E4724FCFC9000C85FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B17E4524FCFC9000C85FDE /* Main.storyboard */; };
+		45B17E4924FCFC9300C85FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B17E4824FCFC9300C85FDE /* Assets.xcassets */; };
+		45B17E4C24FCFC9300C85FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B17E4A24FCFC9300C85FDE /* LaunchScreen.storyboard */; };
+		45B17E5424FD01B000C85FDE /* LeoTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B17E5324FD01B000C85FDE /* LeoTap.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		45B17E3C24FCFC9000C85FDE /* LeoTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeoTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B17E3F24FCFC9000C85FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45B17E4124FCFC9000C85FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		45B17E4324FCFC9000C85FDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45B17E4624FCFC9000C85FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B17E4824FCFC9300C85FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45B17E4B24FCFC9300C85FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45B17E4D24FCFC9300C85FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B17E5324FD01B000C85FDE /* LeoTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoTap.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45B17E3924FCFC9000C85FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45B17E3324FCFC9000C85FDE = {
+			isa = PBXGroup;
+			children = (
+				45B17E3E24FCFC9000C85FDE /* LeoTap */,
+				45B17E3D24FCFC9000C85FDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45B17E3D24FCFC9000C85FDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45B17E3C24FCFC9000C85FDE /* LeoTap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45B17E3E24FCFC9000C85FDE /* LeoTap */ = {
+			isa = PBXGroup;
+			children = (
+				45B17E3F24FCFC9000C85FDE /* AppDelegate.swift */,
+				45B17E4124FCFC9000C85FDE /* SceneDelegate.swift */,
+				45B17E4324FCFC9000C85FDE /* ViewController.swift */,
+				45B17E5324FD01B000C85FDE /* LeoTap.swift */,
+				45B17E4524FCFC9000C85FDE /* Main.storyboard */,
+				45B17E4824FCFC9300C85FDE /* Assets.xcassets */,
+				45B17E4A24FCFC9300C85FDE /* LaunchScreen.storyboard */,
+				45B17E4D24FCFC9300C85FDE /* Info.plist */,
+			);
+			path = LeoTap;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45B17E3B24FCFC9000C85FDE /* LeoTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B17E5024FCFC9300C85FDE /* Build configuration list for PBXNativeTarget "LeoTap" */;
+			buildPhases = (
+				45B17E3824FCFC9000C85FDE /* Sources */,
+				45B17E3924FCFC9000C85FDE /* Frameworks */,
+				45B17E3A24FCFC9000C85FDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeoTap;
+			productName = LeoTap;
+			productReference = 45B17E3C24FCFC9000C85FDE /* LeoTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45B17E3424FCFC9000C85FDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Vijayvir Singh";
+				TargetAttributes = {
+					45B17E3B24FCFC9000C85FDE = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = 45B17E3724FCFC9000C85FDE /* Build configuration list for PBXProject "LeoTap" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45B17E3324FCFC9000C85FDE;
+			productRefGroup = 45B17E3D24FCFC9000C85FDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45B17E3B24FCFC9000C85FDE /* LeoTap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45B17E3A24FCFC9000C85FDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B17E4C24FCFC9300C85FDE /* LaunchScreen.storyboard in Resources */,
+				45B17E4924FCFC9300C85FDE /* Assets.xcassets in Resources */,
+				45B17E4724FCFC9000C85FDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45B17E3824FCFC9000C85FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B17E5424FD01B000C85FDE /* LeoTap.swift in Sources */,
+				45B17E4424FCFC9000C85FDE /* ViewController.swift in Sources */,
+				45B17E4024FCFC9000C85FDE /* AppDelegate.swift in Sources */,
+				45B17E4224FCFC9000C85FDE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		45B17E4524FCFC9000C85FDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B17E4624FCFC9000C85FDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45B17E4A24FCFC9300C85FDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B17E4B24FCFC9300C85FDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45B17E4E24FCFC9300C85FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45B17E4F24FCFC9300C85FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45B17E5124FCFC9300C85FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoTap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B17E5224FCFC9300C85FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoTap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45B17E3724FCFC9000C85FDE /* Build configuration list for PBXProject "LeoTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B17E4E24FCFC9300C85FDE /* Debug */,
+				45B17E4F24FCFC9300C85FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B17E5024FCFC9300C85FDE /* Build configuration list for PBXNativeTarget "LeoTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B17E5124FCFC9300C85FDE /* Debug */,
+				45B17E5224FCFC9300C85FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45B17E3424FCFC9000C85FDE /* Project object */;
+}
