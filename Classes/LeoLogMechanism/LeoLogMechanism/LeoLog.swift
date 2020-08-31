@@ -17,6 +17,19 @@ import MessageUI
 class LeoLog : NSObject{
     static var shared = LeoLog()
     var vc : UIViewController?
+    
+    private lazy var ioQueue: DispatchQueue = {
+           return DispatchQueue(label: "ioQueue")
+       }()
+       
+       private func performBlockAndWait<T>(_ block: () -> T) -> T {
+           return ioQueue.sync {
+               return block()
+           }
+       }
+//
+    
+    
     static func tap(on : UIViewController) {
     let tap = UITapGestureRecognizer(target: LeoLog.shared, action: #selector(LeoLog.shared.handleTap(_:)))
         tap.numberOfTapsRequired = 6
@@ -59,7 +72,12 @@ class LeoLog : NSObject{
         return logfile
     }
     class func write(text: String , _ file : String = #file , function : String = #function ){
-        LeoLog.shared.write(text: "\n\(Date()) \(file) \(function) \(text)")
+        
+        LeoLog.shared.performBlockAndWait { () -> T in
+                LeoLog.shared.write(text: "\n\(Date()) \(file) \(function) \(text)")
+        }
+        
+
         
     }
     func write(text : String) {

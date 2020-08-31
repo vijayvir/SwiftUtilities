@@ -7,31 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		451DD6CD24BDBD16000D9660 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451DD6CC24BDBD16000D9660 /* AppDelegate.swift */; };
-		451DD6CF24BDBD16000D9660 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451DD6CE24BDBD16000D9660 /* SceneDelegate.swift */; };
-		451DD6D124BDBD16000D9660 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451DD6D024BDBD16000D9660 /* ViewController.swift */; };
-		451DD6D424BDBD16000D9660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451DD6D224BDBD16000D9660 /* Main.storyboard */; };
-		451DD6D624BDBD18000D9660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451DD6D524BDBD18000D9660 /* Assets.xcassets */; };
-		451DD6D924BDBD18000D9660 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451DD6D724BDBD18000D9660 /* LaunchScreen.storyboard */; };
-		45B17E3224F92AA000C85FDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B17E3124F92AA000C85FDE /* Logger.swift */; };
-		45CEA45024D5498B00105FF7 /* LeoLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA44F24D5498B00105FF7 /* LeoLog.swift */; };
+		45CEA48824D9157C00105FF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA48724D9157C00105FF7 /* AppDelegate.swift */; };
+		45CEA48A24D9157C00105FF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA48924D9157C00105FF7 /* SceneDelegate.swift */; };
+		45CEA48C24D9157C00105FF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA48B24D9157C00105FF7 /* ViewController.swift */; };
+		45CEA48F24D9157C00105FF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CEA48D24D9157C00105FF7 /* Main.storyboard */; };
+		45CEA49124D9157F00105FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CEA49024D9157F00105FF7 /* Assets.xcassets */; };
+		45CEA49424D9157F00105FF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CEA49224D9157F00105FF7 /* LaunchScreen.storyboard */; };
+		45CEA49C24D9158F00105FF7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA49B24D9158F00105FF7 /* Theme.swift */; };
+		45CEA49F24DAA0DB00105FF7 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA49D24DAA0DB00105FF7 /* CustomButtons.swift */; };
+		45CEA4A024DAA0DB00105FF7 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA49E24DAA0DB00105FF7 /* StyleKit.swift */; };
+		45CEA4A224DABA4700105FF7 /* LeoAnyElementTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEA4A124DABA4700105FF7 /* LeoAnyElementTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		451DD6C924BDBD16000D9660 /* LeoLogMechanism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeoLogMechanism.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		451DD6CC24BDBD16000D9660 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		451DD6CE24BDBD16000D9660 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		451DD6D024BDBD16000D9660 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		451DD6D324BDBD16000D9660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		451DD6D524BDBD18000D9660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		451DD6D824BDBD18000D9660 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		451DD6DA24BDBD18000D9660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B17E3124F92AA000C85FDE /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = SOURCE_ROOT; };
-		45CEA44F24D5498B00105FF7 /* LeoLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoLog.swift; sourceTree = "<group>"; };
+		45CEA48424D9157C00105FF7 /* SomeTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomeTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45CEA48724D9157C00105FF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45CEA48924D9157C00105FF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		45CEA48B24D9157C00105FF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45CEA48E24D9157C00105FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45CEA49024D9157F00105FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45CEA49324D9157F00105FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45CEA49524D9157F00105FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45CEA49B24D9158F00105FF7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		45CEA49D24DAA0DB00105FF7 /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		45CEA49E24DAA0DB00105FF7 /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		45CEA4A124DABA4700105FF7 /* LeoAnyElementTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeoAnyElementTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		451DD6C624BDBD16000D9660 /* Frameworks */ = {
+		45CEA48124D9157C00105FF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,74 +45,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		451DD6C024BDBD16000D9660 = {
+		45CEA47B24D9157C00105FF7 = {
 			isa = PBXGroup;
 			children = (
-				451DD6CB24BDBD16000D9660 /* LeoLogMechanism */,
-				451DD6CA24BDBD16000D9660 /* Products */,
+				45CEA48624D9157C00105FF7 /* SomeTheme */,
+				45CEA48524D9157C00105FF7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		451DD6CA24BDBD16000D9660 /* Products */ = {
+		45CEA48524D9157C00105FF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				451DD6C924BDBD16000D9660 /* LeoLogMechanism.app */,
+				45CEA48424D9157C00105FF7 /* SomeTheme.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		451DD6CB24BDBD16000D9660 /* LeoLogMechanism */ = {
+		45CEA48624D9157C00105FF7 /* SomeTheme */ = {
 			isa = PBXGroup;
 			children = (
-				451DD6CC24BDBD16000D9660 /* AppDelegate.swift */,
-				451DD6CE24BDBD16000D9660 /* SceneDelegate.swift */,
-				451DD6D024BDBD16000D9660 /* ViewController.swift */,
-				45CEA44F24D5498B00105FF7 /* LeoLog.swift */,
-				451DD6D224BDBD16000D9660 /* Main.storyboard */,
-				45B17E3124F92AA000C85FDE /* Logger.swift */,
-				451DD6D524BDBD18000D9660 /* Assets.xcassets */,
-				451DD6D724BDBD18000D9660 /* LaunchScreen.storyboard */,
-				451DD6DA24BDBD18000D9660 /* Info.plist */,
+				45CEA48724D9157C00105FF7 /* AppDelegate.swift */,
+				45CEA48924D9157C00105FF7 /* SceneDelegate.swift */,
+				45CEA48B24D9157C00105FF7 /* ViewController.swift */,
+				45CEA49B24D9158F00105FF7 /* Theme.swift */,
+				45CEA48D24D9157C00105FF7 /* Main.storyboard */,
+				45CEA4A124DABA4700105FF7 /* LeoAnyElementTextField.swift */,
+				45CEA49D24DAA0DB00105FF7 /* CustomButtons.swift */,
+				45CEA49E24DAA0DB00105FF7 /* StyleKit.swift */,
+				45CEA49024D9157F00105FF7 /* Assets.xcassets */,
+				45CEA49224D9157F00105FF7 /* LaunchScreen.storyboard */,
+				45CEA49524D9157F00105FF7 /* Info.plist */,
 			);
-			path = LeoLogMechanism;
+			path = SomeTheme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		451DD6C824BDBD16000D9660 /* LeoLogMechanism */ = {
+		45CEA48324D9157C00105FF7 /* SomeTheme */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 451DD6DD24BDBD18000D9660 /* Build configuration list for PBXNativeTarget "LeoLogMechanism" */;
+			buildConfigurationList = 45CEA49824D9157F00105FF7 /* Build configuration list for PBXNativeTarget "SomeTheme" */;
 			buildPhases = (
-				451DD6C524BDBD16000D9660 /* Sources */,
-				451DD6C624BDBD16000D9660 /* Frameworks */,
-				451DD6C724BDBD16000D9660 /* Resources */,
+				45CEA48024D9157C00105FF7 /* Sources */,
+				45CEA48124D9157C00105FF7 /* Frameworks */,
+				45CEA48224D9157C00105FF7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LeoLogMechanism;
-			productName = LeoLogMechanism;
-			productReference = 451DD6C924BDBD16000D9660 /* LeoLogMechanism.app */;
+			name = SomeTheme;
+			productName = SomeTheme;
+			productReference = 45CEA48424D9157C00105FF7 /* SomeTheme.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		451DD6C124BDBD16000D9660 /* Project object */ = {
+		45CEA47C24D9157C00105FF7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Vijayvir Singh";
 				TargetAttributes = {
-					451DD6C824BDBD16000D9660 = {
-						CreatedOnToolsVersion = 11.5;
+					45CEA48324D9157C00105FF7 = {
+						CreatedOnToolsVersion = 11.6;
 					};
 				};
 			};
-			buildConfigurationList = 451DD6C424BDBD16000D9660 /* Build configuration list for PBXProject "LeoLogMechanism" */;
+			buildConfigurationList = 45CEA47F24D9157C00105FF7 /* Build configuration list for PBXProject "SomeTheme" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,57 +122,59 @@
 				en,
 				Base,
 			);
-			mainGroup = 451DD6C024BDBD16000D9660;
-			productRefGroup = 451DD6CA24BDBD16000D9660 /* Products */;
+			mainGroup = 45CEA47B24D9157C00105FF7;
+			productRefGroup = 45CEA48524D9157C00105FF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				451DD6C824BDBD16000D9660 /* LeoLogMechanism */,
+				45CEA48324D9157C00105FF7 /* SomeTheme */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		451DD6C724BDBD16000D9660 /* Resources */ = {
+		45CEA48224D9157C00105FF7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				451DD6D924BDBD18000D9660 /* LaunchScreen.storyboard in Resources */,
-				451DD6D624BDBD18000D9660 /* Assets.xcassets in Resources */,
-				451DD6D424BDBD16000D9660 /* Main.storyboard in Resources */,
+				45CEA49424D9157F00105FF7 /* LaunchScreen.storyboard in Resources */,
+				45CEA49124D9157F00105FF7 /* Assets.xcassets in Resources */,
+				45CEA48F24D9157C00105FF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		451DD6C524BDBD16000D9660 /* Sources */ = {
+		45CEA48024D9157C00105FF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B17E3224F92AA000C85FDE /* Logger.swift in Sources */,
-				451DD6D124BDBD16000D9660 /* ViewController.swift in Sources */,
-				45CEA45024D5498B00105FF7 /* LeoLog.swift in Sources */,
-				451DD6CD24BDBD16000D9660 /* AppDelegate.swift in Sources */,
-				451DD6CF24BDBD16000D9660 /* SceneDelegate.swift in Sources */,
+				45CEA4A024DAA0DB00105FF7 /* StyleKit.swift in Sources */,
+				45CEA4A224DABA4700105FF7 /* LeoAnyElementTextField.swift in Sources */,
+				45CEA48C24D9157C00105FF7 /* ViewController.swift in Sources */,
+				45CEA49C24D9158F00105FF7 /* Theme.swift in Sources */,
+				45CEA48824D9157C00105FF7 /* AppDelegate.swift in Sources */,
+				45CEA48A24D9157C00105FF7 /* SceneDelegate.swift in Sources */,
+				45CEA49F24DAA0DB00105FF7 /* CustomButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		451DD6D224BDBD16000D9660 /* Main.storyboard */ = {
+		45CEA48D24D9157C00105FF7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				451DD6D324BDBD16000D9660 /* Base */,
+				45CEA48E24D9157C00105FF7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		451DD6D724BDBD18000D9660 /* LaunchScreen.storyboard */ = {
+		45CEA49224D9157F00105FF7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				451DD6D824BDBD18000D9660 /* Base */,
+				45CEA49324D9157F00105FF7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -174,7 +182,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		451DD6DB24BDBD18000D9660 /* Debug */ = {
+		45CEA49624D9157F00105FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -234,7 +242,7 @@
 			};
 			name = Debug;
 		};
-		451DD6DC24BDBD18000D9660 /* Release */ = {
+		45CEA49724D9157F00105FF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,36 +296,36 @@
 			};
 			name = Release;
 		};
-		451DD6DE24BDBD18000D9660 /* Debug */ = {
+		45CEA49924D9157F00105FF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87M7CV64GB;
-				INFOPLIST_FILE = LeoLogMechanism/Info.plist;
+				INFOPLIST_FILE = SomeTheme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoLogMechanism;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.SomeTheme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		451DD6DF24BDBD18000D9660 /* Release */ = {
+		45CEA49A24D9157F00105FF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87M7CV64GB;
-				INFOPLIST_FILE = LeoLogMechanism/Info.plist;
+				INFOPLIST_FILE = SomeTheme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoLogMechanism;
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.SomeTheme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,25 +335,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		451DD6C424BDBD16000D9660 /* Build configuration list for PBXProject "LeoLogMechanism" */ = {
+		45CEA47F24D9157C00105FF7 /* Build configuration list for PBXProject "SomeTheme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				451DD6DB24BDBD18000D9660 /* Debug */,
-				451DD6DC24BDBD18000D9660 /* Release */,
+				45CEA49624D9157F00105FF7 /* Debug */,
+				45CEA49724D9157F00105FF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		451DD6DD24BDBD18000D9660 /* Build configuration list for PBXNativeTarget "LeoLogMechanism" */ = {
+		45CEA49824D9157F00105FF7 /* Build configuration list for PBXNativeTarget "SomeTheme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				451DD6DE24BDBD18000D9660 /* Debug */,
-				451DD6DF24BDBD18000D9660 /* Release */,
+				45CEA49924D9157F00105FF7 /* Debug */,
+				45CEA49A24D9157F00105FF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 451DD6C124BDBD16000D9660 /* Project object */;
+	rootObject = 45CEA47C24D9157C00105FF7 /* Project object */;
 }
