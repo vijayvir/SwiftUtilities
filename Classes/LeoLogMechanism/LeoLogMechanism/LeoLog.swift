@@ -73,11 +73,11 @@ class LeoLog : NSObject{
     }
     class func write(text: String , _ file : String = #file , function : String = #function ){
         
-//        LeoLog.shared.performBlockAndWait { () -> T in
-//
-//        }
+        LeoLog.shared.performBlockAndWait {
+         LeoLog.shared.write(text: "\n\(Date()) \(file) \(function) \(text)")
+        }
 //        
-   LeoLog.shared.write(text: "\n\(Date()) \(file) \(function) \(text)")
+
         
     }
     func write(text : String) {

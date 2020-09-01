@@ -25,22 +25,19 @@ class ViewController: UIViewController {
                 print(some1)
             }
         }
-        
         imageview.leoTap(element: ["First","Second"]) { (element) in
             if let some = element as? [String] {
                 print(some)
             }
         }
-        
         label.leoTap(element: ["First","Second"]) { (element) in
             if let some = element as? [String] {
                 print(some)
             }
         }
-        viewFirst.leoTapView(element: []) { (e ) in
+        viewFirst.leoTapView(element: ["String" : 23]) { (e ) in
             print(e)
         }
-        
         // Do any additional setup after loading the view.
     }
 

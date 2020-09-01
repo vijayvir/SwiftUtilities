@@ -1,3 +1,4 @@
+
 https://www.oreilly.com/library/view/swift-development-for/9781491925263/ch04.html
 https://agostini.tech/2017/02/27/sending-data-from-your-app-to-apple-watch-using-wcsession/
 https://www.swiftdevcenter.com/sending-data-from-iphone-to-apple-watch-and-vice-versa-using-swift-5/
@@ -13,3 +14,9 @@ xcrun simctl push ABE69966-7624-4CFB-B073-0CD0A4550250 com.efuel.first.SnapShot2
 
 https://code.tutsplus.com/tutorials/an-introduction-to-the-usernotifications-framework--cms-27250
 https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification
+
+
+
+You Tube 
+https://www.youtube.com/watch?v=dzwPTELDMro
+

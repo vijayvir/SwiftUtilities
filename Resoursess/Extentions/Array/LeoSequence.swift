@@ -47,3 +47,21 @@ extension Sequence where Iterator.Element: Hashable {
         return  some
     }
 }
+extension Sequence {
+    func group<Key: Hashable>(by keyForValue: (Element) -> Key) -> [(key: Key, values: [Element])] {
+        var result: [(key: Key, values: [Element])] = []
+        var keys: [Key] = []
+        let dictionary = reduce(into: [Key : [Element]]()) { (accumulatingDictionary, element) in
+            let key = keyForValue(element)
+            if !keys.contains(key) {
+                keys.append(key)
+            }
+            accumulatingDictionary[key, default: []].append(element)
+        }
+        keys.forEach { (key) in
+            let tuple = (key, dictionary[key] ?? [])
+            result.append(tuple)
+        }
+        return result
+    }
+}
