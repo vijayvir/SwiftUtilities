@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//https://www.avanderlee.com/swift/operations/
 class LeoQueue {
     
     /// To Check if Queue is main Thread

@@ -18,6 +18,7 @@
 		45B0DD312525A56C00F1A32D /* LeoThreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD302525A56C00F1A32D /* LeoThreads.swift */; };
 		45B0DD392525B55200F1A32D /* Messanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD382525B55200F1A32D /* Messanger.swift */; };
 		45B0DD3E2525B6B000F1A32D /* Readme!.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 45B0DD3D2525B6B000F1A32D /* Readme!.rtf */; };
+		45B0DD442525C46A00F1A32D /* LeoOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD432525C46A00F1A32D /* LeoOperationQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		45B0DD302525A56C00F1A32D /* LeoThreads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeoThreads.swift; path = ../../../LeoThreads.swift; sourceTree = "<group>"; };
 		45B0DD382525B55200F1A32D /* Messanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messanger.swift; sourceTree = "<group>"; };
 		45B0DD3D2525B6B000F1A32D /* Readme!.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Readme!.rtf"; sourceTree = "<group>"; };
+		45B0DD432525C46A00F1A32D /* LeoOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoOperationQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				45B0DCFF2525A55400F1A32D /* SceneDelegate.swift */,
 				45B0DD012525A55400F1A32D /* ViewController.swift */,
 				45B0DD302525A56C00F1A32D /* LeoThreads.swift */,
+				45B0DD432525C46A00F1A32D /* LeoOperationQueue.swift */,
 				45B0DD382525B55200F1A32D /* Messanger.swift */,
 				45B0DD3D2525B6B000F1A32D /* Readme!.rtf */,
 				45B0DD032525A55400F1A32D /* Main.storyboard */,
@@ -270,6 +273,7 @@
 			files = (
 				45B0DD022525A55400F1A32D /* ViewController.swift in Sources */,
 				45B0DCFE2525A55400F1A32D /* AppDelegate.swift in Sources */,
+				45B0DD442525C46A00F1A32D /* LeoOperationQueue.swift in Sources */,
 				45B0DD312525A56C00F1A32D /* LeoThreads.swift in Sources */,
 				45B0DD392525B55200F1A32D /* Messanger.swift in Sources */,
 				45B0DD002525A55400F1A32D /* SceneDelegate.swift in Sources */,

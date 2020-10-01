@@ -9,17 +9,132 @@ import UIKit
 /*
  Resources:
   https://www.avanderlee.com/swift/concurrent-serial-dispatchqueue/
- 
+  https://www.appcoda.com/ios-concurrency/
  */
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dispatchQueue() 
-       
+       // dispatchQueue()
+         print(LeoQueue.isMainThread)
+        LeoOperationQueue.standard.queue.addOperation {
+            print("A1: First Operation run in background thread. Is this is main block?", LeoQueue.isMainThread)
+            // OutPut:
+            //A1: First Operation. Is this is main block? false
+            LeoOperationQueue.mainQueue {
+                print("A1.1 Code of block run in main queue after run in corcurrent thread. Is this main queue?", LeoQueue.isMainThread)
+            }
+        }
+        
+        LeoOperationQueue.standard.queue.addOperation {
+            print("A2: Second Operation run in background thread. Is this is main block?", LeoQueue.isMainThread)
+            /* Output
+             A1: First Operation run in background thread. Is this is main block? false
+             A2: Second Operation run in background thread. Is this is main block? false
+             A1.1 Code of block run in main queue after run in corcurrent thread. Is this main queue? true
+             A2.1 Code of block run in main queue after run in corcurrent thread. Is this main queue? true
+
+             */
+            LeoOperationQueue.mainQueue {
+                print("A2.1 Code of block run in main queue after run in corcurrent thread. Is this main queue?", LeoQueue.isMainThread)
+            }
+        }
+        /*******************assing Block opertions to the queue with competions  block************************/
+        
+        let queueTwo = LeoOperationQueue().queue
+        
+        // First Block
+        let bo1 = BlockOperation {
+            print("B1.1 block operations first code is ran, Is this main thread", LeoQueue.isMainThread)
+        }
+        bo1.completionBlock = {
+            print("B1.2 comletions block is ran. Is this main thread", LeoQueue.isMainThread)
+        }
+        
+        queueTwo.addOperation(bo1)
+        /*
+         Output :
+         B1.1 block operations first code is ran, Is this main thread false
+         B1.2 comletions block is ran. Is this main thread false
+         */
+        
+        // Second Block
+        let bo2 = BlockOperation {
+            queueTwo.cancelAllOperations()
+            print("B2.1 block operations second code is ran, Is this main thread", LeoQueue.isMainThread)
+   
+        }
+        bo2.completionBlock = {
+            print("B2.2 comletions block is ran. Is this main thread", LeoQueue.isMainThread)
+           
+            LeoOperationQueue.mainQueue {
+                print("B2.3 Code of block run in main queue after run in corcurrent queue. Is this main queue?", LeoQueue.isMainThread)
+            }
+        }
+        
+        queueTwo.addOperation(bo2)
+        /*
+         Output:
+         B1.1 block operations first code is ran, Is this main thread false
+         B2.1 block operations second code is ran, Is this main thread false
+         B1.2 comletions block is ran. Is this main thread false
+         B2.2 comletions block is ran. Is this main thread false
+         B2.3 Code of block run in main queue after run in corcurrent queue. Is this main queue? true
+         */
+        
+        
+        // Thrid Block
+        let bo3 = BlockOperation {
+            print("B3.1 block operations third code is ran, Is this main thread", LeoQueue.isMainThread)
+          
+        }
+        bo3.completionBlock = {
+            print("B3.2 comletions block is ran. Is this main thread", LeoQueue.isMainThread)
+            
+        }
+        queueTwo.addOperation(bo3)
+        
+//        bo2.addDependency(bo1)
+//        bo2.addDependency(bo3)
+        
+        let o1 = LeoOperations(value: 24)
+        o1.completionBlock = {
+            print("o1:Custom competion block is called", o1.value)
+        }
+        queueTwo.addOperation(o1)
+        
+        let o2 = LeoOperations(value: 5)
+        o2.completionBlock = {
+            print("o2:Custom competion block is called")
+        }
+        queueTwo.addOperation(o2)
+        /*
+         
+         */
+        
+        
+        
+        //          queueTwo.cancelAllOperations() only works in dependency block.
+        
     }
     
+    
+    func operationQueue(){
+        
+    }
+    
+    
     func dispatchQueue() {
+        
+        /*
+         In dispatch queue you will learn following points
+         1 Check if the current thread is main thread.
+         2.Put the block of code in background thread.
+         3.Put back background thread to the main thread.
+         4.Make the private thread from the calle thread and gives control to main thread or calli thread.
+    
+         */
+        
         print(LeoQueue.isMainThread)
         LeoQueue.mainThread {
             print("1.1.This Code Ran in Main Thread with async. Is this Main Thread?", LeoQueue.isMainThread)
