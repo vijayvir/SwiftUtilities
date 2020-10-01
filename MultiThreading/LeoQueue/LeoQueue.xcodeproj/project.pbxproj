@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45B0DCFE2525A55400F1A32D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DCFD2525A55400F1A32D /* AppDelegate.swift */; };
+		45B0DD002525A55400F1A32D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DCFF2525A55400F1A32D /* SceneDelegate.swift */; };
+		45B0DD022525A55400F1A32D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD012525A55400F1A32D /* ViewController.swift */; };
+		45B0DD052525A55400F1A32D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B0DD032525A55400F1A32D /* Main.storyboard */; };
+		45B0DD072525A55700F1A32D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B0DD062525A55700F1A32D /* Assets.xcassets */; };
+		45B0DD0A2525A55700F1A32D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B0DD082525A55700F1A32D /* LaunchScreen.storyboard */; };
+		45B0DD152525A55700F1A32D /* LeoQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD142525A55700F1A32D /* LeoQueueTests.swift */; };
+		45B0DD202525A55700F1A32D /* LeoQueueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD1F2525A55700F1A32D /* LeoQueueUITests.swift */; };
+		45B0DD312525A56C00F1A32D /* LeoThreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD302525A56C00F1A32D /* LeoThreads.swift */; };
+		45B0DD392525B55200F1A32D /* Messanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B0DD382525B55200F1A32D /* Messanger.swift */; };
+		45B0DD3E2525B6B000F1A32D /* Readme!.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 45B0DD3D2525B6B000F1A32D /* Readme!.rtf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45B0DD112525A55700F1A32D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45B0DCF22525A55400F1A32D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B0DCF92525A55400F1A32D;
+			remoteInfo = LeoQueue;
+		};
+		45B0DD1C2525A55700F1A32D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45B0DCF22525A55400F1A32D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B0DCF92525A55400F1A32D;
+			remoteInfo = LeoQueue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45B0DCFA2525A55400F1A32D /* LeoQueue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeoQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B0DCFD2525A55400F1A32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45B0DCFF2525A55400F1A32D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		45B0DD012525A55400F1A32D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45B0DD042525A55400F1A32D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B0DD062525A55700F1A32D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45B0DD092525A55700F1A32D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45B0DD0B2525A55700F1A32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B0DD102525A55700F1A32D /* LeoQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeoQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B0DD142525A55700F1A32D /* LeoQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoQueueTests.swift; sourceTree = "<group>"; };
+		45B0DD162525A55700F1A32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B0DD1B2525A55700F1A32D /* LeoQueueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeoQueueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B0DD1F2525A55700F1A32D /* LeoQueueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoQueueUITests.swift; sourceTree = "<group>"; };
+		45B0DD212525A55700F1A32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B0DD302525A56C00F1A32D /* LeoThreads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeoThreads.swift; path = ../../../LeoThreads.swift; sourceTree = "<group>"; };
+		45B0DD382525B55200F1A32D /* Messanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messanger.swift; sourceTree = "<group>"; };
+		45B0DD3D2525B6B000F1A32D /* Readme!.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Readme!.rtf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45B0DCF72525A55400F1A32D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B0DD0D2525A55700F1A32D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B0DD182525A55700F1A32D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45B0DCF12525A55400F1A32D = {
+			isa = PBXGroup;
+			children = (
+				45B0DCFC2525A55400F1A32D /* LeoQueue */,
+				45B0DD132525A55700F1A32D /* LeoQueueTests */,
+				45B0DD1E2525A55700F1A32D /* LeoQueueUITests */,
+				45B0DCFB2525A55400F1A32D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45B0DCFB2525A55400F1A32D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45B0DCFA2525A55400F1A32D /* LeoQueue.app */,
+				45B0DD102525A55700F1A32D /* LeoQueueTests.xctest */,
+				45B0DD1B2525A55700F1A32D /* LeoQueueUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45B0DCFC2525A55400F1A32D /* LeoQueue */ = {
+			isa = PBXGroup;
+			children = (
+				45B0DCFD2525A55400F1A32D /* AppDelegate.swift */,
+				45B0DCFF2525A55400F1A32D /* SceneDelegate.swift */,
+				45B0DD012525A55400F1A32D /* ViewController.swift */,
+				45B0DD302525A56C00F1A32D /* LeoThreads.swift */,
+				45B0DD382525B55200F1A32D /* Messanger.swift */,
+				45B0DD3D2525B6B000F1A32D /* Readme!.rtf */,
+				45B0DD032525A55400F1A32D /* Main.storyboard */,
+				45B0DD062525A55700F1A32D /* Assets.xcassets */,
+				45B0DD082525A55700F1A32D /* LaunchScreen.storyboard */,
+				45B0DD0B2525A55700F1A32D /* Info.plist */,
+			);
+			path = LeoQueue;
+			sourceTree = "<group>";
+		};
+		45B0DD132525A55700F1A32D /* LeoQueueTests */ = {
+			isa = PBXGroup;
+			children = (
+				45B0DD142525A55700F1A32D /* LeoQueueTests.swift */,
+				45B0DD162525A55700F1A32D /* Info.plist */,
+			);
+			path = LeoQueueTests;
+			sourceTree = "<group>";
+		};
+		45B0DD1E2525A55700F1A32D /* LeoQueueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				45B0DD1F2525A55700F1A32D /* LeoQueueUITests.swift */,
+				45B0DD212525A55700F1A32D /* Info.plist */,
+			);
+			path = LeoQueueUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45B0DCF92525A55400F1A32D /* LeoQueue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B0DD242525A55700F1A32D /* Build configuration list for PBXNativeTarget "LeoQueue" */;
+			buildPhases = (
+				45B0DCF62525A55400F1A32D /* Sources */,
+				45B0DCF72525A55400F1A32D /* Frameworks */,
+				45B0DCF82525A55400F1A32D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeoQueue;
+			productName = LeoQueue;
+			productReference = 45B0DCFA2525A55400F1A32D /* LeoQueue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45B0DD0F2525A55700F1A32D /* LeoQueueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B0DD272525A55700F1A32D /* Build configuration list for PBXNativeTarget "LeoQueueTests" */;
+			buildPhases = (
+				45B0DD0C2525A55700F1A32D /* Sources */,
+				45B0DD0D2525A55700F1A32D /* Frameworks */,
+				45B0DD0E2525A55700F1A32D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B0DD122525A55700F1A32D /* PBXTargetDependency */,
+			);
+			name = LeoQueueTests;
+			productName = LeoQueueTests;
+			productReference = 45B0DD102525A55700F1A32D /* LeoQueueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45B0DD1A2525A55700F1A32D /* LeoQueueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B0DD2A2525A55700F1A32D /* Build configuration list for PBXNativeTarget "LeoQueueUITests" */;
+			buildPhases = (
+				45B0DD172525A55700F1A32D /* Sources */,
+				45B0DD182525A55700F1A32D /* Frameworks */,
+				45B0DD192525A55700F1A32D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B0DD1D2525A55700F1A32D /* PBXTargetDependency */,
+			);
+			name = LeoQueueUITests;
+			productName = LeoQueueUITests;
+			productReference = 45B0DD1B2525A55700F1A32D /* LeoQueueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45B0DCF22525A55400F1A32D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					45B0DCF92525A55400F1A32D = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					45B0DD0F2525A55700F1A32D = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 45B0DCF92525A55400F1A32D;
+					};
+					45B0DD1A2525A55700F1A32D = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 45B0DCF92525A55400F1A32D;
+					};
+				};
+			};
+			buildConfigurationList = 45B0DCF52525A55400F1A32D /* Build configuration list for PBXProject "LeoQueue" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45B0DCF12525A55400F1A32D;
+			productRefGroup = 45B0DCFB2525A55400F1A32D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45B0DCF92525A55400F1A32D /* LeoQueue */,
+				45B0DD0F2525A55700F1A32D /* LeoQueueTests */,
+				45B0DD1A2525A55700F1A32D /* LeoQueueUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45B0DCF82525A55400F1A32D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B0DD3E2525B6B000F1A32D /* Readme!.rtf in Resources */,
+				45B0DD0A2525A55700F1A32D /* LaunchScreen.storyboard in Resources */,
+				45B0DD072525A55700F1A32D /* Assets.xcassets in Resources */,
+				45B0DD052525A55400F1A32D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B0DD0E2525A55700F1A32D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B0DD192525A55700F1A32D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45B0DCF62525A55400F1A32D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B0DD022525A55400F1A32D /* ViewController.swift in Sources */,
+				45B0DCFE2525A55400F1A32D /* AppDelegate.swift in Sources */,
+				45B0DD312525A56C00F1A32D /* LeoThreads.swift in Sources */,
+				45B0DD392525B55200F1A32D /* Messanger.swift in Sources */,
+				45B0DD002525A55400F1A32D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B0DD0C2525A55700F1A32D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B0DD152525A55700F1A32D /* LeoQueueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B0DD172525A55700F1A32D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B0DD202525A55700F1A32D /* LeoQueueUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45B0DD122525A55700F1A32D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B0DCF92525A55400F1A32D /* LeoQueue */;
+			targetProxy = 45B0DD112525A55700F1A32D /* PBXContainerItemProxy */;
+		};
+		45B0DD1D2525A55700F1A32D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B0DCF92525A55400F1A32D /* LeoQueue */;
+			targetProxy = 45B0DD1C2525A55700F1A32D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45B0DD032525A55400F1A32D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B0DD042525A55400F1A32D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45B0DD082525A55700F1A32D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B0DD092525A55700F1A32D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45B0DD222525A55700F1A32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45B0DD232525A55700F1A32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45B0DD252525A55700F1A32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoQueue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoQueue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B0DD262525A55700F1A32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoQueue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoQueue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		45B0DD282525A55700F1A32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoQueueTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoQueueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeoQueue.app/LeoQueue";
+			};
+			name = Debug;
+		};
+		45B0DD292525A55700F1A32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoQueueTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoQueueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeoQueue.app/LeoQueue";
+			};
+			name = Release;
+		};
+		45B0DD2B2525A55700F1A32D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoQueueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoQueueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LeoQueue;
+			};
+			name = Debug;
+		};
+		45B0DD2C2525A55700F1A32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoQueueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.efuel.first.LeoQueueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LeoQueue;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45B0DCF52525A55400F1A32D /* Build configuration list for PBXProject "LeoQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B0DD222525A55700F1A32D /* Debug */,
+				45B0DD232525A55700F1A32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B0DD242525A55700F1A32D /* Build configuration list for PBXNativeTarget "LeoQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B0DD252525A55700F1A32D /* Debug */,
+				45B0DD262525A55700F1A32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B0DD272525A55700F1A32D /* Build configuration list for PBXNativeTarget "LeoQueueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B0DD282525A55700F1A32D /* Debug */,
+				45B0DD292525A55700F1A32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B0DD2A2525A55700F1A32D /* Build configuration list for PBXNativeTarget "LeoQueueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B0DD2B2525A55700F1A32D /* Debug */,
+				45B0DD2C2525A55700F1A32D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45B0DCF22525A55400F1A32D /* Project object */;
+}
