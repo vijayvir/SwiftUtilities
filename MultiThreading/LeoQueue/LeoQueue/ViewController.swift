@@ -10,6 +10,7 @@ import UIKit
  Resources:
   https://www.avanderlee.com/swift/concurrent-serial-dispatchqueue/
   https://www.appcoda.com/ios-concurrency/
+ //https://www.viget.com/articles/concurrency-multithreading-in-ios/
  */
 class ViewController: UIViewController {
 
