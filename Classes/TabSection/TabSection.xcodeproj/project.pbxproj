@@ -15,6 +15,7 @@
 		1985F6B8248D0D7D0060EAC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1985F6B6248D0D7D0060EAC6 /* LaunchScreen.storyboard */; };
 		1985F6C0248D0DDF0060EAC6 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985F6BF248D0DDF0060EAC6 /* CustomCollectionViewCell.swift */; };
 		1985F6C2248D0E130060EAC6 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985F6C1248D0E130060EAC6 /* CustomCollectionView.swift */; };
+		45B0DD982525E91700F1A32D /* Simulator Screen Shot - iPod touch (7th generation) - 2020-10-01 at 16.08.00.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B0DD972525E91700F1A32D /* Simulator Screen Shot - iPod touch (7th generation) - 2020-10-01 at 16.08.00.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1985F6B9248D0D7D0060EAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1985F6BF248D0DDF0060EAC6 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		1985F6C1248D0E130060EAC6 /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
+		45B0DD972525E91700F1A32D /* Simulator Screen Shot - iPod touch (7th generation) - 2020-10-01 at 16.08.00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPod touch (7th generation) - 2020-10-01 at 16.08.00.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1985F6AD248D0D760060EAC6 /* SceneDelegate.swift */,
 				1985F6AF248D0D760060EAC6 /* ViewController.swift */,
 				1985F6B1248D0D760060EAC6 /* Main.storyboard */,
+				45B0DD972525E91700F1A32D /* Simulator Screen Shot - iPod touch (7th generation) - 2020-10-01 at 16.08.00.png */,
 				1985F6C1248D0E130060EAC6 /* CustomCollectionView.swift */,
 				1985F6BF248D0DDF0060EAC6 /* CustomCollectionViewCell.swift */,
 				1985F6B4248D0D7D0060EAC6 /* Assets.xcassets */,
@@ -133,6 +136,7 @@
 			files = (
 				1985F6B8248D0D7D0060EAC6 /* LaunchScreen.storyboard in Resources */,
 				1985F6B5248D0D7D0060EAC6 /* Assets.xcassets in Resources */,
+				45B0DD982525E91700F1A32D /* Simulator Screen Shot - iPod touch (7th generation) - 2020-10-01 at 16.08.00.png in Resources */,
 				1985F6B3248D0D760060EAC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
