@@ -54,23 +54,16 @@
                                     <constraint firstItem="KDa-Tj-3sB" firstAttribute="top" secondItem="VWT-Ms-ywL" secondAttribute="top" id="zUT-5m-n65"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Q9-29-xyg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klD-JZ-DnC">
                                 <rect key="frame" x="0.0" y="830" width="414" height="66"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-FO-wCV" customClass="FATabButton" customModule="AnirudhTab" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="66"/>
-                                        <state key="normal" title="Home"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="FirstButton"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="actionTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="arR-R8-gn1"/>
-                                            <outlet property="continer" destination="KDa-Tj-3sB" id="MvS-Ru-CtZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-ZL-Kwn" customClass="FATabButton" customModule="AnirudhTab" customModuleProvider="target">
-                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="66"/>
-                                        <state key="normal" title="Ecom"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_bar" translatesAutoresizingMaskIntoConstraints="NO" id="sTI-UQ-lLt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0i-ZL-Kwn" customClass="FATabButton" customModule="AnirudhTab" customModuleProvider="target">
+                                        <rect key="frame" x="104" y="10" width="25" height="24"/>
+                                        <state key="normal" image="ECom Icon"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="SecondButton"/>
                                         </userDefinedRuntimeAttributes>
@@ -79,23 +72,42 @@
                                             <outlet property="continer" destination="iXE-fJ-Jz0" id="WXb-Aw-ddk"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-FO-wCV" customClass="FATabButton" customModule="AnirudhTab" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cU7-FO-wCV" secondAttribute="height" id="niH-Y1-Z34"/>
+                                            <constraint firstAttribute="height" constant="44" id="ns7-Jr-yGk"/>
+                                        </constraints>
+                                        <state key="normal" title="Home" image="Home Icon"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="FirstButton"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="arR-R8-gn1"/>
+                                            <outlet property="continer" destination="KDa-Tj-3sB" id="MvS-Ru-CtZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cU7-FO-wCV" firstAttribute="top" secondItem="klD-JZ-DnC" secondAttribute="top" id="Hnm-1Q-XLx"/>
+                                    <constraint firstAttribute="trailing" secondItem="sTI-UQ-lLt" secondAttribute="trailing" id="Nr0-ND-E3s"/>
+                                    <constraint firstItem="l0i-ZL-Kwn" firstAttribute="centerY" secondItem="cU7-FO-wCV" secondAttribute="centerY" id="clo-YZ-ygo"/>
+                                    <constraint firstItem="sTI-UQ-lLt" firstAttribute="top" secondItem="klD-JZ-DnC" secondAttribute="top" id="mjr-dm-iUm"/>
+                                    <constraint firstAttribute="bottom" secondItem="sTI-UQ-lLt" secondAttribute="bottom" id="mvM-YO-lVC"/>
+                                    <constraint firstItem="cU7-FO-wCV" firstAttribute="leading" secondItem="klD-JZ-DnC" secondAttribute="leading" constant="29" id="q0l-7m-3Gj"/>
+                                    <constraint firstItem="sTI-UQ-lLt" firstAttribute="leading" secondItem="klD-JZ-DnC" secondAttribute="leading" id="qMC-gl-Nzg"/>
+                                    <constraint firstItem="l0i-ZL-Kwn" firstAttribute="leading" secondItem="cU7-FO-wCV" secondAttribute="trailing" constant="31" id="tes-Sn-SeT"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Q9-29-xyg">
+                                <rect key="frame" x="0.0" y="830" width="414" height="66"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9I-6L-7HZ" customClass="PlusButton" customModule="AnirudhTab" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="0.0" width="103.5" height="66"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                         <state key="normal" title="+"/>
                                         <connections>
                                             <action selector="actionThirdButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdn-KR-F9j"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZV-W4-G0r" customClass="FATabButton" customModule="AnirudhTab" customModuleProvider="target">
-                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="66"/>
-                                        <state key="normal" title="N"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="FourthButton"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedTab" value="3.1"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="actionTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81h-08-69I"/>
-                                            <outlet property="continer" destination="hVa-PP-W1R" id="c9w-JX-hje"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -103,15 +115,37 @@
                                     <constraint firstAttribute="height" constant="66" id="6Bm-Es-csr"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZV-W4-G0r" customClass="FATabButton" customModule="AnirudhTab" customModuleProvider="target">
+                                <rect key="frame" x="165" y="778" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="Svo-dG-RcP"/>
+                                    <constraint firstAttribute="width" secondItem="2ZV-W4-G0r" secondAttribute="height" id="xTL-Jd-wiz"/>
+                                </constraints>
+                                <state key="normal" image="Refuel Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="FourthButton"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="selectedTab" value="3.1"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81h-08-69I"/>
+                                    <outlet property="continer" destination="hVa-PP-W1R" id="c9w-JX-hje"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="klD-JZ-DnC" firstAttribute="bottom" secondItem="8Q9-29-xyg" secondAttribute="bottom" id="8uT-xo-4Fn"/>
+                            <constraint firstItem="klD-JZ-DnC" firstAttribute="trailing" secondItem="8Q9-29-xyg" secondAttribute="trailing" id="DIR-sd-Sd9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Q9-29-xyg" secondAttribute="trailing" id="EPD-6H-7UF"/>
+                            <constraint firstAttribute="bottom" secondItem="2ZV-W4-G0r" secondAttribute="bottom" constant="26" id="NXb-C9-OXh"/>
                             <constraint firstItem="VWT-Ms-ywL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PKI-xZ-OgF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2ZV-W4-G0r" secondAttribute="trailing" constant="32" id="eDY-Ck-VlS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VWT-Ms-ywL" secondAttribute="bottom" constant="66" id="h02-3d-T0m"/>
+                            <constraint firstItem="klD-JZ-DnC" firstAttribute="top" secondItem="8Q9-29-xyg" secondAttribute="top" id="hMO-cd-1lH"/>
                             <constraint firstItem="VWT-Ms-ywL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kOZ-Ro-dc0"/>
                             <constraint firstItem="VWT-Ms-ywL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="lof-T5-3gI"/>
+                            <constraint firstItem="klD-JZ-DnC" firstAttribute="leading" secondItem="8Q9-29-xyg" secondAttribute="leading" id="v49-gP-PmB"/>
                             <constraint firstItem="8Q9-29-xyg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y2o-zj-9KG"/>
                             <constraint firstAttribute="bottom" secondItem="8Q9-29-xyg" secondAttribute="bottom" id="yhR-Yf-6Y5"/>
                         </constraints>
@@ -302,6 +336,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ECom Icon" width="25" height="24"/>
+        <image name="Home Icon" width="20" height="20"/>
+        <image name="Refuel Button" width="133" height="134"/>
+        <image name="bottom_bar" width="449" height="94"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

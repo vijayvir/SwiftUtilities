@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4533708125304CAB0098A86F /* LeoNSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeoNSObject.swift; sourceTree = "<group>"; };
+		4533708525317F240098A86F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45B0DDD925302DF800F1A32D /* AnirudhTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnirudhTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B0DDDC25302DF800F1A32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B0DDDE25302DF800F1A32D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 				45B0DDDC25302DF800F1A32D /* AppDelegate.swift */,
 				45B0DDDE25302DF800F1A32D /* SceneDelegate.swift */,
 				45B0DDE025302DF800F1A32D /* ViewController.swift */,
+				4533708525317F240098A86F /* README.md */,
 				4533708125304CAB0098A86F /* LeoNSObject.swift */,
 				45B0DDF12530320800F1A32D /* FATabButton.swift */,
 				45B0DDE225302DF800F1A32D /* Main.storyboard */,

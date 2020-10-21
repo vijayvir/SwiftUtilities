@@ -104,19 +104,36 @@ class FirstViewController : UIViewController {
         super.viewDidLoad()
 //        NotificationCenter.default.addObserver(
 //            self,
-//            selector: #selector(self.tabSelected),
+//            selector: #selector(self.leoPop),
 //            name: Notification.Name(FirstViewController.NotificationHomeTab),
 //            object: nil)
-        
-        leoAddObsever(FirstViewController.NotificationHomeTab) { (notification) in
+        leoAddObsever2(FirstViewController.NotificationHomeTab) { (n) in
             self.navigationController?.popToRootViewController(animated: true)
         }
+      
         // Do any additional setup after loading the view.
     }
-    @objc private func tabSelected(notification: NSNotification){
-    
-      
+    @objc private func leoPop(notification: NSNotification){
+        self.navigationController?.popToRootViewController(animated: true)
     }
+    override func viewDidAppear(_ animated: Bool) {
+       
+        super.viewDidAppear(true)
+        let sample = PlusButtonConfiguration()
+        sample.title = "F"
+        sample.notificationID = "DFirsrt"
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(sample.notificationID), object: nil)
+       
+   
+        self.leoAddObsever(sample.notificationID) { (notification) in
+            print("SFirstButtonoucj")
+
+        }
+        
+        NotificationCenter.default.post(name: Notification.Name(PlusButton.notificationPlusButton), object: sample)
+    }
+    
+    
 }
 class SericeViewController : UIViewController {
     override func viewDidLoad() {
@@ -153,7 +170,7 @@ class RefuelViewController  : UIViewController  {
                 print("RTouchCenterButton")
                 NotificationCenter.default.post(name: Notification.Name(PlusButton.notificationPlusButton), object: sample)
             }
-            
+            NotificationCenter.default.post(name: Notification.Name(PlusButton.notificationPlusButton), object: sample)
           
         }
         // Do any additional setup after loading the view.
@@ -175,7 +192,7 @@ class NearByScreenViewContoller: UIViewController {
                 
                 NotificationCenter.default.post(name: Notification.Name(PlusButton.notificationPlusButton), object: sample)
             }
-            
+            NotificationCenter.default.post(name: Notification.Name(PlusButton.notificationPlusButton), object: sample)
            
         }
         // Do any additional setup after loading the view.
