@@ -1,4 +1,8 @@
 
+//
+//  Created by Vijayvir Singh on 31/07/20.
+//  Copyright © 2020  Tigerville Enterprise Pty . All rights reserved.
+
 
 //  Created by Apple on 22/12/16.
 //  Copyright © 2016 vijayvirSingh. All rights reserved.
@@ -15,7 +19,7 @@ class LeoUIDatePickerTextField: UITextField {
         case hhmmss
         case EEEhhmmss
         case EEEEHHmmss
-        
+        case hhMMaaa
         
         var format: String {
             
@@ -32,6 +36,8 @@ class LeoUIDatePickerTextField: UITextField {
             case .EEEhhmmss: return "EEE hh:mm:ss"
                 
             case .EEEEHHmmss : return "EEEE HH:mm:ss"
+            case .hhMMaaa:
+                return "hh:mm aaa"
             }
             
         }
