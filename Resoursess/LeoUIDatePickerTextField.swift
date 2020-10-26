@@ -1,11 +1,9 @@
-//
-//  SkyFloatingLabelDatePickerTextField.swift
-//
-//
+
+
 //  Created by Apple on 22/12/16.
 //  Copyright © 2016 vijayvirSingh. All rights reserved.
 //
-
+//https://www.andyibanez.com/posts/new-uidatepicker-ios14/
 import UIKit
 class LeoUIDatePickerTextField: UITextField {
     
@@ -97,6 +95,11 @@ class LeoUIDatePickerTextField: UITextField {
             datePicker.datePickerMode =  .dateAndTime
         }
         
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         
         
         datePicker.tag = leoTag
