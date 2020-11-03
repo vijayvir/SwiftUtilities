@@ -12,13 +12,15 @@ class ModelDetails  {
 extension ModelDetails : LeoElementable{
  
     var leoText: String {
-        return "dsda"
+        return "sample data"
+    }
+    static var sample :[ModelDetails]{
+        return [ModelDetails(),ModelDetails()]
     }
 }
 
 class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDataSource {
     enum SelectedBy {
-        
         case didSelectRow
         case doneButtonTap
     }
@@ -26,26 +28,32 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
 
     var pickerView: UIPickerView = UIPickerView()
     
+    /// If text field want to select the first option.
+    
     @IBInspectable var shouldFirst: Bool = false
     
     var elements : [LeoElementable] = []
     var selectedElement : LeoElementable?
   
-    // Use this class to have single image.
+    /// Use this class to have single image.
     public  var closureDidSelectElement: ((_ subcategory: LeoElementable , SelectedBy) -> Void)?
-    
-    func configure(withElements : [LeoElementable]) {
+    //MARK: This method to call from Vc
+    func configure(withElements : [LeoElementable] , placeHolder : String = "No Data") {
         elements = withElements
-    
+        
+        pickerView.reloadAllComponents()
+        
         if elements.count <= 0 {
             self.isEnabled = false
         
         }else {
             self.isEnabled = true
         }
-       
-        pickerView.selectRow(0, inComponent: 0, animated: true)
-        
+        if elements.count > 0 {
+            pickerView.selectRow(0, inComponent: 0, animated: true)
+                  
+        }
+      
         
         if shouldFirst {
             if let index = pickerView.selectedRow(inComponent: 0) as Int? {
@@ -53,45 +61,64 @@ class LeoAnyElementTextField : UITextField, UIPickerViewDelegate, UIPickerViewDa
                 if elements.count > 0 {
                     let element: LeoElementable = elements[index]
                     self.text = element.leoText
+                    selectedElement =  elements[index]
+                    closureDidSelectElement?(element, LeoAnyElementTextField.SelectedBy.doneButtonTap)
                 }
                 
             }
+        }else {
+            self.placeholder = placeHolder
+            self.text = ""
+            selectedElement = nil
         }
+        
 
     }
+    
+    func initAgain(isPickerView: Bool ) {
+        if isPickerView {
+            addInputAccessoryView()
+            
+            self.inputView = pickerView
+            
+            //self.textColor = AppColor.theme.color
+            pickerView.dataSource = self
+            
+            pickerView.delegate = self
+            
+            pickerView.selectRow(0, inComponent: 0, animated: true)
+            
+            if elements.count <= 0 {
+                self.isEnabled = false
+            }else {
+                self.isEnabled = true
+            }
+            
+            if shouldFirst {
+                    if let index = pickerView.selectedRow(inComponent: 0) as Int? {
+                        if elements.count > 0 {
+                            let element: LeoElementable = elements[index]
+                            selectedElement = elements[index]
+                            
+                            closureDidSelectElement?(element, LeoAnyElementTextField.SelectedBy.doneButtonTap)
+                            self.text = element.leoText
+                        }
+                        
+                    }
+
+            }
+        }else {
+            self.isEnabled = true
+            self.inputView = nil
+            self.inputAccessoryView = nil
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
-        
-        addInputAccessoryView()
-        
-        self.inputView = pickerView
-        
-        //self.textColor = AppColor.theme.color
-        pickerView.dataSource = self
-        
-        pickerView.delegate = self
-        
-        pickerView.selectRow(0, inComponent: 0, animated: true)
-        
-        if elements.count <= 0 {
-            self.isEnabled = false
-        }else {
-            self.isEnabled = true
-        }
-        
-        
-            if shouldFirst {
-                if let index = pickerView.selectedRow(inComponent: 0) as Int? {
-                    
-                    if elements.count > 0 {
-                        let element: LeoElementable = elements[index]
-                        self.text = element.leoText
-                    }
-                    
-                }
-
-        }
+          initAgain(isPickerView: true )
+     
         
         
     }
