@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "153856D0-0080-4530-BEAC-06AEEA83C60D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9ADFBFB-E25F-425D-9D52-DC769BC8D14E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovCanvas/Mv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "handleTapGesture()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9ADFBFB-E25F-425D-9D52-DC769BC8D14E - 2a725a160abca606"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovCanvas.ViewNext.handleTapGesture() -&gt; ()"
+                  moduleName = "MovCanvas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vijayvir/Documents/Experiment/MovCanvas/MovCanvas/Mv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "C9ADFBFB-E25F-425D-9D52-DC769BC8D14E - 2a725a160abca606"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovCanvas.ViewNext.handleTapGesture() -&gt; ()"
+                  moduleName = "MovCanvas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vijayvir/Documents/Experiment/MovCanvas/MovCanvas/Mv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "C9ADFBFB-E25F-425D-9D52-DC769BC8D14E - 2a725a160abca606"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovCanvas.ViewNext.handleTapGesture() -&gt; ()"
+                  moduleName = "MovCanvas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vijayvir/Documents/Experiment/MovCanvas/MovCanvas/Mv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C491F24C-A013-4443-AA05-3281060A968F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovCanvas/Mv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "handleTapGesture()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C491F24C-A013-4443-AA05-3281060A968F - 2a725a160abca7d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovCanvas.ViewNext.handleTapGesture() -&gt; ()"
+                  moduleName = "MovCanvas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vijayvir/Documents/Experiment/MovCanvas/MovCanvas/Mv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "812">
+               </Location>
+               <Location
+                  uuid = "C491F24C-A013-4443-AA05-3281060A968F - 2a725a160abca79b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovCanvas.ViewNext.handleTapGesture() -&gt; ()"
+                  moduleName = "MovCanvas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vijayvir/Documents/Experiment/MovCanvas/MovCanvas/Mv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  uuid = "C491F24C-A013-4443-AA05-3281060A968F - 2a725a160abca79b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovCanvas.ViewNext.handleTapGesture() -&gt; ()"
+                  moduleName = "MovCanvas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vijayvir/Documents/Experiment/MovCanvas/MovCanvas/Mv.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "660">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B362F07B-2E00-4353-96A4-FDCC56E48CA8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovCanvas/Mv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "handleTapGesture()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "329D47FD-101C-4B4F-A885-0ECF44C3C4E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovCanvas/Mv.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "configure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
